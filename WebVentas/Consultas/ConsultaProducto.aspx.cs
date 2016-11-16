@@ -8,7 +8,7 @@ using BLL;
 
 namespace WebVentas.Consultas
 {
-    public partial class ConsultaUsuario : System.Web.UI.Page
+    public partial class ConsultaProducto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ namespace WebVentas.Consultas
 
         public string Mostrar()
         {
-            Usuario usuario = new Usuario();
+            Producto producto = new Producto();
 
             string filtro = "";
 
@@ -28,23 +28,23 @@ namespace WebVentas.Consultas
                 filtro = "1=1";
 
             }
-            else { 
+            else
+            {
 
                 filtro = DropDownListFiltro.SelectedValue + "like '%" + TextBoxBuscar.Text + "%'";
 
                 filtro = " Fecha Between '" + DesdeTextBox.Text + "'and '" + hastaTextBox.Text + "'";
 
-            GridViewUsuario.DataSource = usuario.Listado("usuario.IdUsuario as Id, Nombre, Apellido, Correo, Contraseña, NombreUsuario", "IdUsuario = " + TextBoxBuscar.Text, "");
-            GridViewUsuario.DataBind();
+                GridViewUsuario.DataSource = producto.Listado("compra.IdProducto as Id, Descripcion, Costo, Precio", "IdProducto = " + TextBoxBuscar.Text, "");
+                GridViewUsuario.DataBind();
 
-            
-        }
+
+            }
             return filtro;
         }
 
         protected void Buscar_Click(object sender, EventArgs e)
         {
-
             Mostrar();
         }
     }

@@ -59,6 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consultas\ConsultaCompra.aspx" />
+    <Content Include="Consultas\ConsultaProducto.aspx" />
     <Content Include="Consultas\ConsultaUsuario.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -95,6 +97,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaCompra.aspx.cs">
+      <DependentUpon>ConsultaCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaCompra.aspx.designer.cs">
+      <DependentUpon>ConsultaCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaProducto.aspx.cs">
+      <DependentUpon>ConsultaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaProducto.aspx.designer.cs">
+      <DependentUpon>ConsultaProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaUsuario.aspx.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
