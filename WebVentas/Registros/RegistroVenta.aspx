@@ -1,8 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroCompra.aspx.cs" Inherits="WebVentas.Registros.RegistroCompra" %>
-
-
-<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroVenta.aspx.cs" Inherits="WebVentas.Registros.Venta" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -13,9 +9,9 @@
     <legend>Registro De Compra</legend>
 
     <div class="form-group">
-      <label for="number" class="col-lg-2 control-label">CompraID</label>
+      <label for="number" class="col-lg-2 control-label">VentaID</label>
       <div class="col-lg-10">
-        <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxCompraID" placeholder="CompraID"></asp:TextBox>
+        <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxVentaID" placeholder="VentaID"></asp:TextBox>
           <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" />
       </div>
     </div>
@@ -30,22 +26,11 @@
     </div>
 
         <label></label>
-   
-    <div class="form-group">
-      <label class="col-lg-2 control-label">Suplidor</label>
-      <div class="col-lg-10">
-        <asp:DropDownList runat="server" class="form-control" id="DropDownListSuplidor" placeholder="Costo">
-            <asp:ListItem>hola</asp:ListItem>
-          </asp:DropDownList>
-      </div>
-    </div>
-
-        <label></label>
 
     <div class="form-group">
       <label class="col-lg-2 control-label">Producto</label>
       <div class="col-lg-10">
-      <asp:DropDownList runat="server" class="form-control" id="DropDownListProducto" placeholder="Producto"></asp:DropDownList>
+      <asp:TextBox runat="server" class="form-control" id="TextBoxListProducto" placeholder="Producto"></asp:TextBox>
       </div>
     </div>
       
@@ -75,3 +60,4 @@
     </div>
   </fieldset>
 </asp:Content>
+

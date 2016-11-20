@@ -5,71 +5,75 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form class="form-horizontal">   
-     <fieldset>
-    <legend>Registro De Usuario</legend>
+    <!-- Banner -->
+    <section id="banner">
+        <header class="special container">
+            <span class="icon fa-user"></span>
+            <h2>Registro de Usuario</h2>
+        </header>
+        
+        <div class="inner">
+             <form  runat="server">
+                 <fieldset>                 
 
-    <div class="form-group">
-      <label for="number" class="col-lg-2 control-label">UsuarioID</label>
-      <div class="col-lg-10">
-        <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxUsuarioID" placeholder="UsuarioID"></asp:TextBox>      
-          <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
-     </div>
-    </div>
+                     <div class="form-group">
+                         <div class="row 50%">
+                             <div class="6u 12u(mobile)">
+                                  <asp:TextBox runat="server" class="form-control" id="TextBoxUsuarioID" placeholder="UsuarioID"></asp:TextBox>                          
+                             </div>
+                             <div class="2u 12u(mobile)">
+                                  <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
+                             </div>
+                         </div>      
+                     </div>
+                     
+                     <div class="form-group">
+                         <div class="row 50%">
+                             <div class="6u 12u(mobile)">
+                                 <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre"></asp:TextBox>
+                             </div>  
+                             <div class="6u 12u(mobile)">
+                                <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido"></asp:TextBox>
+                             </div>                          
+                         </div>  
+                     </div>
+ 
+                    <div class="form-group">
+                        <div class="row 50%" />
+                        <div class="12u">
+                            <asp:TextBox  runat="server"  type="Email" class="form-control" id="TextBoxCorreo" placeholder="Correo"></asp:TextBox>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <div class="row 50%" />
+                        <div class="12u">
+                            <asp:TextBox runat="server"  type="text" class="form-control" id="TextBoxNombreUsuario" placeholder="Nombre Usuario"></asp:TextBox>
+                        </div>
+                    </div>
 
-         <label></label>
+        
 
-     <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Nombre</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre"></asp:TextBox>
-      </div>
-    </div>
-
-         <label></label>
-
-      <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Apellido</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido"></asp:TextBox>
-      </div>
-    </div>
-
-         <label></label>
-   
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Correo</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="Email" class="form-control" id="TextBoxCorreo" placeholder="Correo"></asp:TextBox>
-      </div>
-    </div>
-
-         <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Nombre Usuario</label>
-      <div class="col-lg-10">
-        <asp:TextBox runat="server"  type="text" class="form-control" id="TextBoxNombreUsuario" placeholder="Nombre Usuario"></asp:TextBox>      
-     </div>
-    </div>
-
-         <label></label>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server" type="password" class="form-control" id="TextBoxContraseña" placeholder="Contraseña"></asp:TextBox>
-      </div>
-    </div>
+                    <div class="form-group">
+                        <div class="row 50%" />
+                        <div class="12u">
+                            <asp:TextBox  runat="server" type="password" class="form-control" id="TextBoxContraseña" placeholder="Contraseña"></asp:TextBox>
+                        </div>
+                    </div>
       
-         <label></label>
+         
 
-         <div class="form-group">
-      <label class="col-lg-2 control-label">Imagen</label>
-      <div class="col-lg-10">
-        <asp:FileUpload  runat="server" type="text" class="form-control" id="TextBoxImagen" placeholder="Imagen"></asp:FileUpload>
-      </div>
-    </div>
-                  <label></label>
+                    <div class="form-group">
+                        <div class="row 50%" />       
+                        <div class="12u">
+                            <label>Imagen</label>
+                            <asp:FileUpload  runat="server" type="text" class="form-control" id="TextBoxImagen" placeholder="Imagen"></asp:FileUpload>
+                        </div>
+                    </div>
+                 
 
     <div class="form-group">
+        <div class="row 50%" />
       <div class="col-lg-10 col-lg-offset-2">
         <asp:Button Id="ButtoEliminar" runat="server" Text="Eliminar" class="btn btn-default" BackColor="Red" OnClick="ButtoEliminar_Click"></asp:Button>
         &nbsp;
@@ -80,4 +84,8 @@
     </div>
   </fieldset>
     </form>
+                        </div>
+                    </section>
+   
+
 </asp:Content>

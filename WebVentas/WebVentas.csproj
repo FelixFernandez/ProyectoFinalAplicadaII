@@ -62,38 +62,21 @@
     <Content Include="Consultas\ConsultaCompra.aspx" />
     <Content Include="Consultas\ConsultaProducto.aspx" />
     <Content Include="Consultas\ConsultaUsuario.aspx" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="DB\VentasDb.sql" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Registros\RegistroCompra.aspx" />
     <Content Include="Registros\RegistroProducto.aspx" />
     <Content Include="Registros\RegistroSuplidor.aspx" />
     <Content Include="Registros\RegistroUsuario.aspx" />
     <Content Include="packages.config" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Registros\Venta.aspx" />
+    <Content Include="Registros\RegistroVenta.aspx" />
     <Content Include="Reportes\ReporteCompra.aspx" />
     <Content Include="Reportes\ReporteProducto.aspx" />
     <Content Include="Reportes\ReporteSuplidor.aspx" />
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="Reportes\ReporteVenta.aspx" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Registros\WebUserControl1.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +100,16 @@
     </Compile>
     <Compile Include="Consultas\ConsultaUsuario.aspx.designer.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -154,12 +147,12 @@
     <Compile Include="Registros\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\Venta.aspx.cs">
-      <DependentUpon>Venta.aspx</DependentUpon>
+    <Compile Include="Registros\RegistroVenta.aspx.cs">
+      <DependentUpon>RegistroVenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\Venta.aspx.designer.cs">
-      <DependentUpon>Venta.aspx</DependentUpon>
+    <Compile Include="Registros\RegistroVenta.aspx.designer.cs">
+      <DependentUpon>RegistroVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteCompra.aspx.cs">
       <DependentUpon>ReporteCompra.aspx</DependentUpon>
@@ -196,6 +189,13 @@
     <Compile Include="Reportes\ReporteVenta.aspx.designer.cs">
       <DependentUpon>ReporteVenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registros\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
     <Compile Include="VentasDb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,8 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="VentasDb.xsc">
       <DependentUpon>VentasDb.xsd</DependentUpon>
     </Content>
@@ -231,7 +229,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
     <Folder Include="Imagen\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ReportCompra.rdlc" />
