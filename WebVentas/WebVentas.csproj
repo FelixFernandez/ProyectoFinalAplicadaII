@@ -62,9 +62,15 @@
     <Content Include="Consultas\ConsultaCompra.aspx" />
     <Content Include="Consultas\ConsultaProducto.aspx" />
     <Content Include="Consultas\ConsultaUsuario.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="DB\VentasDb.sql" />
     <Content Include="Default.aspx" />
-    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login.aspx" />
     <Content Include="Registros\RegistroCompra.aspx" />
     <Content Include="Registros\RegistroProducto.aspx" />
     <Content Include="Registros\RegistroSuplidor.aspx" />
@@ -76,7 +82,8 @@
     <Content Include="Reportes\ReporteSuplidor.aspx" />
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="Reportes\ReporteVenta.aspx" />
-    <Content Include="Registros\WebUserControl1.ascx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,8 +115,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -189,13 +200,6 @@
     <Compile Include="Reportes\ReporteVenta.aspx.designer.cs">
       <DependentUpon>ReporteVenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\WebUserControl1.ascx.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registros\WebUserControl1.ascx.designer.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
-    </Compile>
     <Compile Include="VentasDb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,10 +207,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MasterPage.Master" />
     <Content Include="VentasDb.xsc">
       <DependentUpon>VentasDb.xsd</DependentUpon>
     </Content>
+    <Content Include="MasterPage.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="VentasDb.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>VentasDb.Designer.cs</LastGenOutput>
@@ -229,9 +241,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
     <Folder Include="Imagen\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ReportCompra.rdlc" />

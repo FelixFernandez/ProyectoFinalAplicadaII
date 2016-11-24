@@ -12,7 +12,6 @@ namespace WebVentas.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         public void Limpiar()
@@ -36,10 +35,13 @@ namespace WebVentas.Registros
             usuario.NombreUsuario = TextBoxNombreUsuario.Text;
             usuario.Contraseña = TextBoxContraseña.Text;
 
-            string str = TextBoxImagen.FileName;
-            TextBoxImagen.PostedFile.SaveAs(Server.MapPath("Imagen") + str);
-            string path = "Imagen" + str.ToString();
-            usuario.Imagen = path;
+            // string srt = TextBoxImagen.FileName;
+            // TextBoxImagen.PostedFile.SaveAs(Server.MapPath("Imagen") + str);
+            //  string path = "Imagen" + str.ToString();
+            //  usuario.Imagen = path;
+
+            string nombre = "capture.jpg";
+            TextBoxImagen.SaveAs(Server.MapPath("~/imagen" + nombre));
 
         }
 
@@ -55,35 +57,39 @@ namespace WebVentas.Registros
             TextBoxContraseña.Text = usuario.Contraseña.ToString();
         }
 
-
-
-
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
+
             Usuario usuario = new Usuario();
 
-            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
-            LlenarCampos();
+         //   if (string.IsNullOrWhiteSpace(TextBoxUsuarioID.Text) || string.IsNullOrWhiteSpace(TextBoxNombre.Text) || string.IsNullOrWhiteSpace(TextBoxApellido.Text) || string.IsNullOrWhiteSpace(TextBoxCorreo.Text) || string.IsNullOrWhiteSpace(TextBoxNombreUsuario.Text) || string.IsNullOrWhiteSpace(TextBoxContraseña.Text))
+           
+            
+            
+          //  else  
+                usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
+                LlenarCampos();
 
+                int cero = 0;
 
-            int cero = 0;
-
-            if (usuario.Modificar())
-            {
-                Response.Write("El Usuario a sido Actualizado");
-
-                if (usuario.IdUsuario > cero)
+                if (usuario.Modificar())
                 {
-                    usuario.Insertar();
-                    Response.Write("El Usuario Se Guardo Correctamente");
-                }
-                else
-                {
-                    Response.Write("El Usuario No Se Guardo Correctamente");
+                    Response.Write("El Usuario a sido Actualizado");
+
+                    if (usuario.IdUsuario > cero)
+                    {
+                        usuario.Insertar();
+                        Response.Write("El Usuario Se Guardo Correctamente");
+                    }
+                    else
+                    {
+                        Response.Write("El Usuario No Se Guardo Correctamente");
+                    }
+                
                 }
             }
             
-        }
+        
 
         protected void ButtonNuevo_Click(object sender, EventArgs e)
         {
@@ -116,14 +122,8 @@ namespace WebVentas.Registros
 
             
             usuario.IdUsuario=Convert.ToInt32(TextBoxUsuarioID.Text);
-
-            
-            
-
                 usuario.Buscar(usuario.IdUsuario);
-                MostrarCampos();
-            
-          
+                MostrarCampos();       
             
         }
     }

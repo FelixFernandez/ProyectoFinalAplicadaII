@@ -6,77 +6,81 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form class="form-horizontal">   
-     <fieldset>
-    <legend>Registro De Suplidor</legend>
+    <form>   
+     <fieldset class="container">
+        <legend>Registro De Suplidor</legend>
 
     <div class="form-group">
-      <label for="number" class="col-lg-2 control-label">SuplidorID</label>
-      <div class="col-lg-10">
-        <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxSuplidorID" placeholder="SuplidorID"></asp:TextBox>      
-          <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" />
-     </div>
+        <div class="row 50%">
+            <div class="col-md-6">
+                <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxSuplidorID" placeholder="SuplidorID"></asp:TextBox> 
+            </div>     
+             <div>
+                <asp:Button ID="ButtonBuscar" class="btn btn-default" runat="server" Text="Buscar" />
+             </div>
+        </div>
     </div>
-
-         <label></label>
+ 
 
      <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Nombre</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre"></asp:TextBox>
-      </div>
+         <div class="row 50%">
+             <div class="col-md-6">
+                 <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre"></asp:TextBox>
+             </div>
+             <div class="col-md-6">
+                 <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido"></asp:TextBox>
+             </div>
+         </div>
     </div>
 
-         <label></label>
-
-      <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Apellido</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido"></asp:TextBox>
-      </div>
-    </div>
-
-         <label></label>
+        
    
     <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Direccion</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxDireccion" placeholder="Direccion"></asp:TextBox>
-      </div>
+        <div class="row 50%">
+            <div class="col-md-12">
+                <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxDireccion" placeholder="Direccion"></asp:TextBox>
+            </div>
+        </div>
     </div>
 
-         <label></label>
+        
     <div class="form-group">
-      <label for="number" class="col-lg-2 control-label">Telefono</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server" type="number" class="form-control" id="TextBoxTelefono" placeholder="Telefono"></asp:TextBox>
-      </div>
+        <div class="row 50%">
+            <div class="col-md-12">
+                <asp:TextBox  runat="server" type="number" class="form-control" id="TextBoxTelefono" placeholder="Telefono"></asp:TextBox>
+            </div>
+        </div>
     </div>
 
-          <label></label>
+        
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Correo</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server"  type="Email" class="form-control" id="TextBoxCorreo" placeholder="Correo"></asp:TextBox>
-      </div>
-    </div>
+        <div class="row 50%">
+            <div class="col-md-12">
+                <asp:TextBox  runat="server"  type="Email" class="form-control" id="TextBoxCorreo" placeholder="Correo"></asp:TextBox>
+            </div>
+        </div>
+     </div>
       
-          <label></label>
+          
     <div class="form-group">
-      <label for="text" class="col-lg-2 control-label">Empresa</label>
-      <div class="col-lg-10">
-        <asp:TextBox  runat="server" type="text" class="form-control" id="TextBoxEmpresa" placeholder="Empresa"></asp:TextBox>
-      </div>
-    </div>
-         <label></label>
+        <div class="row 50%">
+            <div class="col-md-12">
+                <asp:TextBox  runat="server" type="text" class="form-control" id="TextBoxEmpresa" placeholder="Empresa"></asp:TextBox>
+            </div>
+        </div>
+     </div>
+     
+           
     <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <asp:button runat="server" type="reset" class="btn btn-default" Text="Eliminar" OnClick="Unnamed3_Click"></asp:button>
-        <asp:button runat="server" type="submit" class="btn btn-primary" Text="Nuevo" OnClick="Unnamed4_Click"></asp:button>
-        <asp:button runat="server" type="submit" class="btn btn-primary" Text="Guardar" OnClick="Guardar_Click"></asp:button>
-      </div>
-    </div>
+        <div class="row 50%">
+            <div class="col-md-4">
+                <asp:button runat="server" type="reset" class="btn btn-default" Text="Eliminar" OnClick="Eliminar_Click"></asp:button>
+                <asp:button runat="server" type="submit" class="btn btn-primary" Text="Nuevo" OnClick="Nuevo_Click"></asp:button>
+                <asp:button runat="server" type="submit" class="btn btn-primary" Text="Guardar" OnClick="Guardar_Click"></asp:button>
+            </div>
+        </div>
+     </div>
   </fieldset>
-    </form>
+ </form>
 
 </asp:Content>
