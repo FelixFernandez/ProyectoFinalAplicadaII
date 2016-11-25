@@ -33,13 +33,13 @@
             <div class="row 50%">
                 <div class="col-md-6">
                     <asp:DropDownList  runat="server" class="form-control" id="DropDownListSuplidor">
-                        <asp:ListItem>hola como estas</asp:ListItem>
+                        <asp:ListItem>Suplidor</asp:ListItem>
                         <asp:ListItem>hola como estas</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-md-6">
                     <asp:DropDownList runat="server" class="form-control"  id="DropDownListProducto" DataTextField="Producto">
-                        <asp:ListItem>hola como estas</asp:ListItem>
+                        <asp:ListItem>Producto</asp:ListItem>
                         <asp:ListItem>hola como estas</asp:ListItem>
                     </asp:DropDownList>
                 </div>

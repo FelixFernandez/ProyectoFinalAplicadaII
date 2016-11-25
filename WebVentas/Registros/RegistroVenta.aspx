@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form />
+   
         <fieldset class="container">
             <legend>Registro De Compra</legend>
             

@@ -1,8 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="RegistroUsuario.aspx.cs" Inherits="WebVentas.Registros.RegistroUsuario" %>
 
+<asp:Content ContentPlaceHolderID="head" runat="server">
+
+</asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form>
         <fieldset class="container">
             <legend>Registro de usuario</legend>
             
@@ -10,7 +12,7 @@
                 <div class="row 50%">
                     <div class="col-md-6">
                                   <asp:TextBox runat="server" class="form-control" id="TextBoxUsuarioID" placeholder="UsuarioID" ValidationGroup="mismoGrupo"></asp:TextBox> 
-                                  <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>                               
+                              <!--    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>       -->                         
                                   <asp:RequiredFieldValidator id="RequiredFieldValidator1" ControlToValidate="TextBoxUsuarioID" Text="*Campo Obligatorio"  runat="server"/>               
                                       </div>
                              <div>
@@ -23,12 +25,12 @@
                          <div class="row 50%">
                              <div class="col-md-6">
                                  <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre"></asp:TextBox>
-                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator>
+                            <!--     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator> -->
                                   <asp:RequiredFieldValidator id="RequiredFieldValidator6" ControlToValidate="TextBoxNombre" Text="*Campo Obligatorio"  runat="server"/>
                              </div>  
                               <div class="col-md-6">
                                 <asp:TextBox  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido"></asp:TextBox>
-                                  <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxApellido" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator>
+                               <!--   <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxApellido" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator> -->
                                   <asp:RequiredFieldValidator id="RequiredFieldValidator5" ControlToValidate="TextBoxApellido" Text="*Campo Obligatorio"  runat="server"/>
                              </div>                          
                          </div>  
@@ -80,5 +82,5 @@
                    </div>
                </div>
         </fieldset>
-    </form>     
+       
 </asp:Content>
