@@ -32,7 +32,7 @@ namespace WebVentas.Consultas
 
                 filtro = DropDownListFiltro.SelectedValue + "like '%" + TextBoxBuscar.Text + "%'";
 
-                filtro = " Fecha Between '" + DesdeTextBox.Text + "'and '" + hastaTextBox.Text + "'";
+             //   filtro = " Fecha Between '" + DesdeTextBox.Text + "'and '" + hastaTextBox.Text + "'";
 
             GridViewUsuario.DataSource = usuario.Listado("usuario.IdUsuario as Id, Nombre, Apellido, Correo, Contraseña, NombreUsuario", "IdUsuario = " + TextBoxBuscar.Text, "");
             GridViewUsuario.DataBind();

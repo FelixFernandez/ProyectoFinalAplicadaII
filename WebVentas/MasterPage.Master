@@ -49,7 +49,9 @@
           <a href="#" class="dropdown-toggle  glyphicon glyphicon-search" data-toggle="dropdown" role="button" aria-expanded="false"> Consultas <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/Consultas/ConsultaUsuario.aspx">Usuario</a></li>
-            <li><a href="/Consultas/ConsultaProducto.aspx">Suplidor</a></li>
+            <li><a href="/Consultas/ConsultaSuplidor.aspx">Suplidor</a></li>
+            <li><a href="/Consultas/ConsultaProducto.aspx">Producto</a></li>
+            <li><a href="/Consultas/ConsultaVenta.aspx">Venta</a></li>
             <li><a href="/Consultas/ConsultaCompra.aspx">Compra</a></li>
           </ul>
         </li>
@@ -62,8 +64,8 @@
             <li><a href="/Reportes/ReporteUsuario.aspx">Usuario</a></li>
             <li><a href="/Reportes/ReporteSuplidor.aspx">Suplidor</a></li>
             <li><a href="/Reportes/ReporteProducto.aspx">Producto</a></li>
-            <li><a href="/Registros/RegistroVenta.aspx">Venta</a></li>
-            <li><a href="/Registros/RegistroCompra.aspx">Compra</a></li>
+            <li><a href="/Reportes/ReporteVenta.aspx">Venta</a></li>
+            <li><a href="/Reportes/ReporteCompra.aspx">Compra</a></li>
           </ul>
         </li>
       </ul>
@@ -90,5 +92,29 @@
         <script src="/Scripts/jquery-3.1.1.slim.min.js"></script>
     </form>
 
+    <footer class="bg-primary">
+      
+
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+        </blockquote>
+
+        <div class="bg-primary">
+            fdg
+            dgfg
+            dgd
+            dg
+            dgd
+            dgd
+            dfgd
+            gdf
+            dg
+            dfg
+            dg
+        </div>
+
+
+    </footer>
     </body>
 </html>

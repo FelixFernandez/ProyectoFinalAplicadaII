@@ -31,6 +31,15 @@ namespace WebVentas.Consultas {
         protected global::System.Web.UI.WebControls.TextBox TextBoxBuscar;
         
         /// <summary>
+        /// GridViewCompra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCompra;
+        
+        /// <summary>
         /// DesdeTextBox control.
         /// </summary>
         /// <remarks>
@@ -47,14 +56,5 @@ namespace WebVentas.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox hastaTextBox;
-        
-        /// <summary>
-        /// GridViewUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewUsuario;
     }
 }

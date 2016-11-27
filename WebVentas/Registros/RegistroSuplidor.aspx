@@ -5,19 +5,21 @@
 
 </asp:Content>
 
-<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <form>   
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
      <fieldset class="container">
-        <legend>Registro De Suplidor</legend>
+        <h1><strong>Registro De Suplidor</strong></h1>
+
+         <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
 
     <div class="form-group">
         <div class="row 50%">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxSuplidorID" placeholder="SuplidorID"></asp:TextBox> 
             </div>     
              <div>
-                <asp:Button ID="ButtonBuscar" class="btn btn-default" runat="server" Text="Buscar" />
+                <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" />
              </div>
         </div>
     </div>
@@ -75,13 +77,13 @@
     <div class="form-group">
         <div class="row 50%">
             <div class="col-md-4">
-                <asp:button runat="server" type="reset" class="btn btn-default" Text="Eliminar" OnClick="Eliminar_Click"></asp:button>
-                <asp:button runat="server" type="submit" class="btn btn-primary" Text="Nuevo" OnClick="Nuevo_Click"></asp:button>
+                <asp:button runat="server" type="reset" class="btn btn-danger" Text="Eliminar" OnClick="Eliminar_Click"></asp:button>
+                <asp:button runat="server" type="submit" class="btn btn-success" Text="Nuevo" OnClick="Nuevo_Click"></asp:button>
                 <asp:button runat="server" type="submit" class="btn btn-primary" Text="Guardar" OnClick="Guardar_Click"></asp:button>
             </div>
         </div>
      </div>
+         <div class="row 50%"></div>
   </fieldset>
- </form>
 
 </asp:Content>

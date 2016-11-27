@@ -40,8 +40,8 @@ namespace WebVentas.Registros
             //  string path = "Imagen" + str.ToString();
             //  usuario.Imagen = path;
 
-            string nombre = "capture.jpg";
-            TextBoxImagen.SaveAs(Server.MapPath("~/imagen" + nombre));
+         //   string nombre = "capture.jpg";
+           // TextBoxImagen.SaveAs(Server.MapPath("~/imagen" + nombre));
 
         }
 
@@ -60,35 +60,23 @@ namespace WebVentas.Registros
         protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
 
-            Usuario usuario = new Usuario();
+           Usuario usuario = new Usuario();
 
-         //   if (string.IsNullOrWhiteSpace(TextBoxUsuarioID.Text) || string.IsNullOrWhiteSpace(TextBoxNombre.Text) || string.IsNullOrWhiteSpace(TextBoxApellido.Text) || string.IsNullOrWhiteSpace(TextBoxCorreo.Text) || string.IsNullOrWhiteSpace(TextBoxNombreUsuario.Text) || string.IsNullOrWhiteSpace(TextBoxContraseña.Text))
+            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
+            LlenarCampos();
+
+            int cero = 0;
            
-            
-            
-          //  else  
-                usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
-                LlenarCampos();
-
-                int cero = 0;
-
-                if (usuario.Modificar())
+                if (usuario.IdUsuario > cero)
                 {
-                    Response.Write("El Usuario a sido Actualizado");
-
-                    if (usuario.IdUsuario > cero)
-                    {
-                        usuario.Insertar();
-                        Response.Write("El Usuario Se Guardo Correctamente");
-                    }
-                    else
-                    {
-                        Response.Write("El Usuario No Se Guardo Correctamente");
-                    }
-                
+                    usuario.Insertar();
+                    Response.Write("El Usuario Se Guardo Correctamente");
                 }
-            }
-            
+                else
+                {
+                    Response.Write("El Usuario No Se Guardo Correctamente");
+                }               
+            }           
         
 
         protected void ButtonNuevo_Click(object sender, EventArgs e)

@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaProducto.aspx.cs" Inherits="WebVentas.Consultas.ConsultaProducto" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ConsultaVenta.aspx.cs" Inherits="WebVentas.Consultas.ConsultaVenta" %>
+
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <fieldset class="container">
-        <h1><strong>Consulta De Producto </strong></h1>
+        <h1><strong>Consulta De Venta </strong></h1>
         <div class="progress">
                 <div class="progress-bar" style="width: 100%;"></div>
             </div>
@@ -22,7 +23,7 @@
                     <asp:TextBox ID="TextBoxBuscar" class="form-control" runat="server"></asp:TextBox> 
                 </div>
                 <div >
-                    <asp:Button runat="server" class="btn btn-primay" Text="Buscar" OnClick="Buscar_Click"/> 
+                    <asp:Button runat="server" class="btn btn-primay" Text="Buscar"/> 
                 </div>
             </div>
         </div>
@@ -31,7 +32,7 @@
         <div class="alert alert-dismissible alert-success"/>   
      <div class="row 50%">
     <div>
-        <asp:GridView ID="GridViewProducto" runat="server" class="bg-primary" CellPadding="4" ForeColor="#333333" GridLines="None" Width="961px" >
+        <asp:GridView ID="GridViewVenta" runat="server" class="bg-primary" CellPadding="4" ForeColor="#333333" GridLines="None" Width="961px" >
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

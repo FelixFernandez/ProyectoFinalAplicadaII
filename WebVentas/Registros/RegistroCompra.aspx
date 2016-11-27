@@ -8,15 +8,18 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
     <fieldset class="container">
-        <legend>Registro De Compra</legend>
+        <h1><strong>Registro De Compra</strong></h1>
+            <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
 
         <div class="form-group">
             <div class="row 50%">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <asp:TextBox runat="server" TextMode="number" class="form-control" id="TextBoxCompraID" placeholder="CompraID"></asp:TextBox>
                 </div>
                 <div>
-                    <asp:Button ID="ButtonBuscar" class="btn btn-primary" runat="server" Text="Buscar" />
+                    <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" />
                 </div>
             </div>
         </div>
@@ -66,13 +69,13 @@
     <div class="form-group">
             <div class="row 50%">
                 <div class="col-md-4">
-        <asp:button runat="server" Text="Eliminar" type="reset" class="btn btn-default" OnClick="Eliminar_Click"></asp:button>
-        <asp:button runat="server" Text="Nuevo" type="submit" class="btn btn-primary" OnClick="Nuevo_Click"></asp:button>
+        <asp:button runat="server" Text="Eliminar" type="reset" class="btn btn-danger" OnClick="Eliminar_Click"></asp:button>
+        <asp:button runat="server" Text="Nuevo" type="submit" class="btn btn-success" OnClick="Nuevo_Click"></asp:button>
         <asp:button runat="server" Text="Guardar" type="submit" class="btn btn-primary" OnClick="Guardar_Click"></asp:button>
       </div>
     </div>
         </div>
-        
-                        
+
+        <div class="row 50%"></div>                     
   </fieldset>
 </asp:Content>

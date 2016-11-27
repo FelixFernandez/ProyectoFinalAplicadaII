@@ -4,18 +4,16 @@
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <div id="page-wrapper">
-        <section id="banner">
-            <header class="special container">
-                <span class="icon fa-user"></span>
-                <h2>Registro de Compra</h2>
-            </header>
-            </section>
-            <article id="main">
-           
-    <form runat="server">
+      <fieldset class="container">
+        <h1><strong>Reporte De Usuario </strong></h1>
+        <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+   
+      <div class="alert alert-dismissible alert-success" style="background-color: #FFFFFF"/>      
+  
     <asp:scriptmanager id="ScriptManager1" runat="server" enablepagemethods="true" />
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" BackColor="White" BorderStyle="None">
         <LocalReport ReportPath="Reportes\ReportUsuario.rdlc">
             <DataSources>
                 <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSetUsuario" />
@@ -23,10 +21,9 @@
         </LocalReport>
     </rsweb:ReportViewer>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VentasDbConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
-</form>
+
               
 
-            </article>
-            </div>
+          </fieldset>
     
 </asp:Content>

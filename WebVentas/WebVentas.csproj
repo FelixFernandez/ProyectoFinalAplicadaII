@@ -61,7 +61,9 @@
   <ItemGroup>
     <Content Include="Consultas\ConsultaCompra.aspx" />
     <Content Include="Consultas\ConsultaProducto.aspx" />
+    <Content Include="Consultas\ConsultaSuplidor.aspx" />
     <Content Include="Consultas\ConsultaUsuario.aspx" />
+    <Content Include="Consultas\ConsultaVenta.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -106,12 +108,26 @@
     <Compile Include="Consultas\ConsultaProducto.aspx.designer.cs">
       <DependentUpon>ConsultaProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaSuplidor.aspx.cs">
+      <DependentUpon>ConsultaSuplidor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSuplidor.aspx.designer.cs">
+      <DependentUpon>ConsultaSuplidor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaUsuario.aspx.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\ConsultaUsuario.aspx.designer.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVenta.aspx.cs">
+      <DependentUpon>ConsultaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVenta.aspx.designer.cs">
+      <DependentUpon>ConsultaVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

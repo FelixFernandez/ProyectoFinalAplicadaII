@@ -36,8 +36,8 @@ namespace WebVentas.Consultas
 
                 filtro = " Fecha Between '" + DesdeTextBox.Text + "'and '" + hastaTextBox.Text + "'";
 
-                GridViewUsuario.DataSource = compra.Listado("compra.IdCompra as Id, IdSuplidor, Fecha, TotalCompr", "IdCompra = " + TextBoxBuscar.Text, "");
-                GridViewUsuario.DataBind();
+                GridViewCompra.DataSource = compra.Listado("compra.IdCompra as Id, IdSuplidor, Fecha, TotalCompr", "IdCompra = " + TextBoxBuscar.Text, "");
+                GridViewCompra.DataBind();
 
 
             }

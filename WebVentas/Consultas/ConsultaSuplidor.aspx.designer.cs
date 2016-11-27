@@ -10,7 +10,7 @@
 namespace WebVentas.Consultas {
     
     
-    public partial class ConsultaUsuario {
+    public partial class ConsultaSuplidor {
         
         /// <summary>
         /// DropDownListFiltro control.
@@ -31,12 +31,30 @@ namespace WebVentas.Consultas {
         protected global::System.Web.UI.WebControls.TextBox TextBoxBuscar;
         
         /// <summary>
-        /// GridViewUsuario control.
+        /// GridViewSuplidor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewUsuario;
+        protected global::System.Web.UI.WebControls.GridView GridViewSuplidor;
+        
+        /// <summary>
+        /// DesdeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DesdeTextBox;
+        
+        /// <summary>
+        /// hastaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox hastaTextBox;
     }
 }

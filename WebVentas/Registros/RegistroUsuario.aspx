@@ -5,21 +5,26 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <fieldset class="container">
-            <legend>Registro de usuario</legend>
+    <fieldset class="container">
+        <h1><strong>Registro De Usuario</strong></h1>
             
+            <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
             <div class="form-group">
                 <div class="row 50%">
-                    <div class="col-md-6">
-                                  <asp:TextBox runat="server" class="form-control" id="TextBoxUsuarioID" placeholder="UsuarioID" ValidationGroup="mismoGrupo"></asp:TextBox> 
-                              <!--    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>       -->                         
-                                  <asp:RequiredFieldValidator id="RequiredFieldValidator1" ControlToValidate="TextBoxUsuarioID" Text="*Campo Obligatorio"  runat="server"/>               
-                                      </div>
-                             <div>
-                                  <asp:Button ID="ButtonBuscar" class="btn btn-default" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
-                             </div>
-                         </div>      
-                     </div>
+                    <div class="col-md-5">
+                        <asp:TextBox runat="server" TextMode="number" class="form-control" id="TextBoxUsuarioID" placeholder="UsuarioID" ValidationGroup="mismoGrupo"></asp:TextBox> 
+                         <!--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese Valores Numericos" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>       -->                         
+                        <asp:RequiredFieldValidator id="RequiredFieldValidator1" ControlToValidate="TextBoxUsuarioID" Text="*Campo Obligatorio"  runat="server"></asp:RequiredFieldValidator>               
+                    </div>
+                    
+                    <div>
+                        <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
+                    </div>
+                </div>      
+            </div>
                      
                      <div class="form-group">
                          <div class="row 50%">
@@ -75,12 +80,14 @@
                 <div class="form-group">
                     <div class="row 50%">
                         <div class="col-md-4">
-                            <asp:Button Id="ButtoEliminar" runat="server" Text="Eliminar" class="btn btn-default" OnClick="ButtoEliminar_Click"></asp:Button>
-                            &nbsp;<asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-default" OnClick="ButtonNuevo_Click"></asp:Button>
-                            &nbsp;<asp:Button ID="ButtonGurdar" runat="server" Text="Guardar" class="btn btn-default" OnClick="ButtonGuardar_Click"></asp:Button>    
+                            <asp:Button Id="ButtoEliminar" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="ButtoEliminar_Click"></asp:Button>
+                            &nbsp;<asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-success" OnClick="ButtonNuevo_Click"></asp:Button>
+                            &nbsp;<asp:Button ID="ButtonGurdar" runat="server" Text="Guardar" class="btn btn-primary" OnClick="ButtonGuardar_Click"></asp:Button>    
                        </div>
                    </div>
                </div>
+
+        <div class="row 50%"></div>
         </fieldset>
        
 </asp:Content>
