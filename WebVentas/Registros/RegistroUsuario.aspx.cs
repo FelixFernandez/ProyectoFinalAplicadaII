@@ -28,7 +28,6 @@ namespace WebVentas.Registros
         {
             Usuario usuario = new Usuario();
 
-            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
             usuario.Nombre = TextBoxNombre.Text;
             usuario.Apellido = TextBoxApellido.Text;
             usuario.Correo = TextBoxCorreo.Text;
@@ -52,6 +51,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
+                    usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
                     if (usuario.Modificar())
                     {
                         Limpiar();

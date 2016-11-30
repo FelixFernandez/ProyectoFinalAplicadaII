@@ -87,10 +87,7 @@
         <div class="row 50%">
             <div class="well">
                 <div class="text-danger">
-                    <div>
-                        <asp:requiredfieldvalidator validationgroup="ValidarGuardar" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*ID NO VALIDO!... por favor revise el id" ></asp:requiredfieldvalidator>
-                    <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*ID NO VALIDO!... por favor revise el id" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
-                    </div>
+                   
                     
                     <div>
                         <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*NOMBRE NO VALIDO!!... por favor revise el nombre"></asp:requiredfieldvalidator> 

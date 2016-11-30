@@ -27,7 +27,7 @@ namespace WebVentas.Registros
         protected void Guardar_Click(object sender, EventArgs e)
         {
             Producto producto = new Producto();
-            producto.IdProducto = Convert.ToInt32(TextBoxProductoID.Text);
+          
             producto.Descripcion = TextBoxDescripcion.Text;
             producto.Costo = Convert.ToInt32(TextBoxCosto.Text);
             producto.Precio = Convert.ToInt32(TextBoxPrecio.Text);
@@ -50,6 +50,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
+                    producto.IdProducto = Convert.ToInt32(TextBoxProductoID.Text);
                     if (producto.Modificar())
                     {
                         Limpiar();

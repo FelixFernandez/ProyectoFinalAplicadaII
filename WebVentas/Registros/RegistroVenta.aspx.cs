@@ -26,7 +26,7 @@ namespace WebVentas.Registros
         protected void Guardar_Click(object sender, EventArgs e)
         {
             Venta venta = new Venta();
-            venta.IdVenta = Convert.ToInt32(TextBoxVentaID.Text);
+           
             venta.Fecha = TextBoxFecha.Text;
             venta.TotalVenta = Convert.ToInt32(TextBoxTotalVenta.Text);
             
@@ -48,6 +48,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
+                    venta.IdVenta = Convert.ToInt32(TextBoxVentaID.Text);
                     if (venta.Modificar())
                     {
                         Limpiar();

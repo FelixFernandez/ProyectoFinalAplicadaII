@@ -31,7 +31,7 @@ namespace WebVentas.Registros
         {
             Suplidor suplidor = new Suplidor();
 
-            suplidor.IdSuplidor = Convert.ToInt32(TextBoxSuplidorID.Text);
+          
             suplidor.Nombre = TextBoxNombre.Text;
             suplidor.Apellido = TextBoxApellido.Text;
             suplidor.Direccion = TextBoxDireccion.Text;
@@ -60,6 +60,7 @@ namespace WebVentas.Registros
 
                 else
                 {
+                    suplidor.IdSuplidor = Convert.ToInt32(TextBoxSuplidorID.Text);
                     if (suplidor.Modificar())
                     {
                         Limpiar();

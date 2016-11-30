@@ -59,9 +59,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\VentasDb.mdf" />
+    <Content Include="App_Data\VentasDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\VentasDb_log.ldf">
       <DependentUpon>VentasDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Consultas\ConsultaCompra.aspx" />
     <Content Include="Consultas\ConsultaProducto.aspx" />
