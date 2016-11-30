@@ -33,9 +33,10 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Suplidor (IdSuplidor, Nombre, Apellido, Direccion, Telefono, correo, Empresa) values('" + this.IdSuplidor + "','" + this.Nombre + "','" + this.Apellido + "','" + this.Direccion + "','" + this.Telefono + "','" + this.Correo + "','" + this.Empresa + "') Select @@Identity"));
+            retorno = conexion.Ejecutar(string.Format("insert into Suplidor(Nombre, Apellido, Direccion, Telefono, correo, Empresa) values('" + this.Nombre + "','" + this.Apellido + "','" + this.Direccion + "','" + this.Telefono + "','" + this.Correo + "','" + this.Empresa + "')"));
             return retorno;
         }
+
 
         public override bool Eliminar()
         {
@@ -49,7 +50,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("update Suplidor set Nombre, Apellido, Direccion, Telefono, correo, Empresa) values('"+ this.Nombre + "','" + this.Apellido + "','" + this.Direccion + "','" + this.Telefono + "','" + this.Correo + "','" + this.Empresa + "where IdSuplidor = " + this.IdSuplidor));
+            retorno = conexion.Ejecutar(string.Format("update Suplidor set Nombre='"+this.Nombre+"', Apellido='"+this.Apellido+"', Direccion='"+this.Direccion+"', Telefono='"+this.Telefono+"', correo='"+this.Correo+"', Empresa='"+this.Empresa+ "'where IdSuplidor = " + this.IdSuplidor));
             return retorno;
         }
     

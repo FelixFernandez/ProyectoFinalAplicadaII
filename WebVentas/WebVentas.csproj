@@ -59,6 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\VentasDb.mdf" />
+    <Content Include="App_Data\VentasDb_log.ldf">
+      <DependentUpon>VentasDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Consultas\ConsultaCompra.aspx" />
     <Content Include="Consultas\ConsultaProducto.aspx" />
     <Content Include="Consultas\ConsultaSuplidor.aspx" />
@@ -72,7 +76,8 @@
     <Content Include="DB\VentasDb.sql" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Login.aspx" />
+    <Content Include="Login\css\style.css" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="Registros\RegistroCompra.aspx" />
     <Content Include="Registros\RegistroProducto.aspx" />
     <Content Include="Registros\RegistroSuplidor.aspx" />
@@ -86,6 +91,10 @@
     <Content Include="Reportes\ReporteVenta.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -136,11 +145,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
@@ -151,6 +160,11 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroCompra.aspx.cs">
       <DependentUpon>RegistroCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,9 +242,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="VentasDb.xsc">
-      <DependentUpon>VentasDb.xsd</DependentUpon>
-    </Content>
     <Content Include="MasterPage.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -242,10 +253,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="VentasDb.xsc">
+      <DependentUpon>VentasDb.xsd</DependentUpon>
+    </Content>
     <None Include="VentasDb.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>VentasDb.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <Content Include="VentasDb.xss">
       <DependentUpon>VentasDb.xsd</DependentUpon>

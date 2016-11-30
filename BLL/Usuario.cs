@@ -28,11 +28,25 @@ namespace BLL
             this.Imagen = "";
         }
 
+        public bool Login()
+        {
+            ConexionDb conexion = new ConexionDb();
+            bool Resultado = false;
+            DataTable dt = new DataTable();
+
+            dt =conexion.ObtenerDatos("select IdUsuario from Usuario where IdUsuario = '" + this.NombreUsuario + "' and Contraseña = '" + this.Contraseña + "'");
+
+            if (dt.Rows.Count > 0)
+                Resultado = true;
+
+            return Resultado;
+        }
+
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Usuario(IdUsuario, Nombre, Apellido, Correo, NombreUsuario, Contraseña, Imagen) Values('" + this.IdUsuario + "','" + this.Nombre + "','" + this.Apellido + "','" + this.Correo + "','" + this.NombreUsuario + "','" + this.Contraseña + "','" + this.Imagen + "') Select @@Identity"));
+            retorno = conexion.Ejecutar(string.Format("insert into Usuario(Nombre, Apellido, Correo, NombreUsuario, Contraseña, Imagen) Values('" + this.Nombre + "','" + this.Apellido + "','" + this.Correo + "','" + this.NombreUsuario + "','" + this.Contraseña + "','" + this.Imagen + "')"));
             return retorno;
         }
 
@@ -40,7 +54,9 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("update Usuario set Nombre, Apellido, Correo, Contraseña, NombreUsuario, Imagen = '" + this.IdUsuario + "','" + this.Nombre + "','" + this.Apellido + "','" + this.Correo + "','" + this.NombreUsuario + "','" + this.Contraseña + "','" + this.Imagen + "' where IdUsuario=" + this.IdUsuario));
+
+            retorno = conexion.Ejecutar(string.Format("update Usuario set Nombre='"+this.Nombre+"',Apellido='"+this.Apellido+"',Correo='"+this.Correo+"', Contraseña='"+this.Contraseña+"', NombreUsuario='"+this.NombreUsuario+"', Imagen='"+this.Imagen+ "'where IdUsuario ="+ this.IdUsuario));
+
             return retorno;
         }
 

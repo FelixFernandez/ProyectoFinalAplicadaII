@@ -11,13 +11,13 @@ namespace BLL
     {
         public int IdVenta { get; set; }
         public string Fecha { get; set; }
-        public float TotalVenta { get; set; }
+        public int TotalVenta { get; set; }
 
         public Venta()
         {
             this.IdVenta = 0;
             this.Fecha = "";
-            this.TotalVenta = float.MaxValue;
+            this.TotalVenta =0;
 
         }
 
@@ -26,7 +26,7 @@ namespace BLL
 
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Venta (IdVenta, Fecha, TotalVenta) values('" + this.IdVenta + "','" + this.Fecha + "','" + this.TotalVenta +"') Select @@Identity"));
+            retorno = conexion.Ejecutar(string.Format("insert into Venta (Fecha, TotalVenta) values('" + this.IdVenta + "','" + this.Fecha + "','" + this.TotalVenta +"')"));
             return retorno;
         }
 
@@ -34,7 +34,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("update Venta set Fecha, TotalVenta) values( where IdVenta=" + this.IdVenta));
+            retorno = conexion.Ejecutar(string.Format("update Venta set Fecha='"+this.Fecha+"', TotalVenta='"+this.TotalVenta+ "'where IdVenta=" + this.IdVenta));
             return retorno;
         }
 
@@ -58,7 +58,7 @@ namespace BLL
                 {
                     IdVenta = (int)dt.Rows[0]["IdVenta"];
                     Fecha = dt.Rows[0]["Fecha"].ToString();
-                    TotalVenta = (float)dt.Rows[0]["TotalVenta"];
+                    TotalVenta = (int)dt.Rows[0]["TotalVenta"];
                 }
             }
             catch (Exception ex)

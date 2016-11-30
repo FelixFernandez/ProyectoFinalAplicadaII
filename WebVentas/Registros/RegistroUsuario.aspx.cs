@@ -24,7 +24,7 @@ namespace WebVentas.Registros
             TextBoxContraseña.Text = string.Empty;
         }
 
-        public void LlenarCampos()
+        protected void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
 
@@ -35,48 +35,40 @@ namespace WebVentas.Registros
             usuario.NombreUsuario = TextBoxNombreUsuario.Text;
             usuario.Contraseña = TextBoxContraseña.Text;
 
-            // string srt = TextBoxImagen.FileName;
-            // TextBoxImagen.PostedFile.SaveAs(Server.MapPath("Imagen") + str);
-            //  string path = "Imagen" + str.ToString();
-            //  usuario.Imagen = path;
-
-         //   string nombre = "capture.jpg";
-           // TextBoxImagen.SaveAs(Server.MapPath("~/imagen" + nombre));
-
-        }
-
-
-        public void MostrarCampos()
-        {
-            Usuario usuario = new Usuario();
-            TextBoxUsuarioID.Text = usuario.IdUsuario.ToString();
-            TextBoxNombre.Text = usuario.Nombre.ToString();
-            TextBoxApellido.Text = usuario.Apellido.ToString();
-            TextBoxCorreo.Text = usuario.Correo.ToString();
-            TextBoxNombreUsuario.Text = usuario.NombreUsuario.ToString();
-            TextBoxContraseña.Text = usuario.Contraseña.ToString();
-        }
-
-        protected void ButtonGuardar_Click(object sender, EventArgs e)
-        {
-
-           Usuario usuario = new Usuario();
-
-            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
-            LlenarCampos();
-
-            int cero = 0;
-           
-                if (usuario.IdUsuario > cero)
+            if (Page.IsValid)// eso es para que me valide los campos
+            {
+                if (TextBoxUsuarioID.Text == "")
                 {
-                    usuario.Insertar();
-                    Response.Write("El Usuario Se Guardo Correctamente");
+                    if (usuario.Insertar())
+                    {
+                        Limpiar();
+                        Response.Write("El Usuario Se Guardo Correctamente");
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("El Usuario no Se Guardo Correctamente");
+                    }
                 }
                 else
                 {
-                    Response.Write("El Usuario No Se Guardo Correctamente");
-                }               
-            }           
+                    if (usuario.Modificar())
+                    {
+                        Limpiar();
+                        Response.Write("El Usuario Se Modifico Correctamente");
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("El Usuario no Se modifico Correctamente");
+                    }
+                }
+            }
+        }
+           
+            
+            
+          
         
 
         protected void ButtonNuevo_Click(object sender, EventArgs e)
@@ -86,33 +78,53 @@ namespace WebVentas.Registros
 
         protected void ButtoEliminar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
+           
+                Usuario usuario = new Usuario();
 
-            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
+                usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
 
-            int cero = 0;
-
-            if(usuario.IdUsuario > cero)
-            {
-                usuario.Eliminar();
-                Response.Write("El Usuario Se Elimino Correctamente");
-            }
-            else
-            {
-                Response.Write("El Usuario No Se Elimino");
+                if (usuario.IdUsuario > 0)
+                {
+                    usuario.Eliminar();
+                    Response.Write("El Usuario Se Elimino Correctamente");
+                }
+                else
+                {
+                    Response.Write("El Usuario No Se Elimino");
+                }
             }
             
+            
+        
+
+        private void Buscar(Usuario usuario)
+        {
+            TextBoxUsuarioID.Text = usuario.IdUsuario.ToString();
+            TextBoxNombre.Text = usuario.Nombre.ToString();
+            TextBoxApellido.Text = usuario.Apellido.ToString();
+            TextBoxCorreo.Text = usuario.Correo.ToString();
+            TextBoxNombreUsuario.Text = usuario.NombreUsuario.ToString();
+            TextBoxContraseña.Text = usuario.Contraseña.ToString();
         }
 
         protected void ButtonBuscar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
+            usuario.IdUsuario = Convert.ToInt32(TextBoxUsuarioID.Text);
 
-            
-            usuario.IdUsuario=Convert.ToInt32(TextBoxUsuarioID.Text);
-                usuario.Buscar(usuario.IdUsuario);
-                MostrarCampos();       
-            
+           if (Page.IsValid)
+                    {
+                if (usuario.Buscar(usuario.IdUsuario))
+                {
+                    Buscar(usuario);
+                }
+                else
+                {
+                    Response.Write("El Id No Existe");
+
+                } 
+            }
+
         }
     }
 }

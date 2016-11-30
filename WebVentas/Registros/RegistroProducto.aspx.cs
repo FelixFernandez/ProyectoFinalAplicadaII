@@ -15,7 +15,7 @@ namespace WebVentas.Registros
 
         }
 
-        public void LimpiarTextBox()
+        public void Limpiar()
         {
             TextBoxProductoID.Text = string.Empty;
             TextBoxDescripcion.Text = string.Empty;
@@ -23,36 +23,51 @@ namespace WebVentas.Registros
             TextBoxPrecio.Text = string.Empty;
         }
 
-        public void LLenarTextBox()
-        {
-            Producto producto = new Producto();
-            producto.Descripcion = TextBoxDescripcion.Text;
-            producto.Costo = float.Parse(TextBoxCosto.Text);
-            producto.Precio = float.Parse(TextBoxPrecio.Text);
-        }
 
         protected void Guardar_Click(object sender, EventArgs e)
         {
             Producto producto = new Producto();
-            producto.IdProducto = int.Parse(TextBoxProductoID.Text);
-            LLenarTextBox();
+            producto.IdProducto = Convert.ToInt32(TextBoxProductoID.Text);
+            producto.Descripcion = TextBoxDescripcion.Text;
+            producto.Costo = Convert.ToInt32(TextBoxCosto.Text);
+            producto.Precio = Convert.ToInt32(TextBoxPrecio.Text);
 
-
-            if (producto.IdProducto > 0)
+            if (Page.IsValid)
             {
-                producto.Insertar();
-                Response.Write("producto guardado");
-                LimpiarTextBox();
-            }
-            else
-            {
-                Response.Write("error al guardar");
+                if (TextBoxProductoID.Text == "")
+                {
+                    if (producto.Insertar())
+                    {
+                        Limpiar();
+                        Response.Write("producto guardado");
+                        
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("error al guardar");
+                    }
+                }
+                else
+                {
+                    if (producto.Modificar())
+                    {
+                        Limpiar();
+                        Response.Write("El producto Se Modifico Correctamente");
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("El Usuproductoario no Se modifico Correctamente");
+                    }
+                }
             }
         }
 
+
         protected void Nuevo_Click(object sender, EventArgs e)
         {
-            LimpiarTextBox();
+            Limpiar();
         }
 
         protected void Eliminar_Click(object sender, EventArgs e)
@@ -63,7 +78,7 @@ namespace WebVentas.Registros
                 {
                     producto.Eliminar();
                     Response.Write("producto eliminado");
-                    LimpiarTextBox();
+                    Limpiar();
                 }
                 else
                 {
@@ -71,6 +86,31 @@ namespace WebVentas.Registros
                 }
                
             }
-        
+
+        private void Buscar(Producto producto)
+        {
+            TextBoxProductoID.Text = producto.IdProducto.ToString();
+            TextBoxDescripcion.Text = producto.Descripcion.ToString();
+            TextBoxCosto.Text = producto.Costo.ToString();
+            TextBoxPrecio.Text = producto.Precio.ToString();
+        }
+
+        protected void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+            Producto producto = new Producto();
+            producto.IdProducto = Convert.ToInt32(TextBoxProductoID.Text);
+            if (Page.IsValid)
+            {
+                if (producto.Buscar(producto.IdProducto))
+                {
+                    Buscar(producto);
+                }
+                else
+                {
+                    Response.Write("El Id No Existe");
+
+                }
+            }
+        }
     }
 }

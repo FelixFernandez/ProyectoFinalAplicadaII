@@ -2,7 +2,7 @@
 
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <fieldset class="container">
+    <fieldset class="container">
         <h1><strong>Consulta De Venta </strong></h1>
         <div class="progress">
                 <div class="progress-bar" style="width: 100%;"></div>
@@ -20,16 +20,18 @@
                         </asp:DropDownList>
                    </div>
                 <div class="col-md-7">
-                    <asp:TextBox ID="TextBoxBuscar" class="form-control" runat="server"></asp:TextBox> 
+                     <asp:TextBox ValidationGroup="ValidarBuscar" ID="TextBoxBuscar" class="form-control" runat="server" MaxLength="10"></asp:TextBox> 
+                     <asp:requiredfieldvalidator  validationgroup="ValidarBuscar" ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxBuscar" ErrorMessage="Ingrese un dato valido" ForeColor="red" CssClass="auto-style1"></asp:requiredfieldvalidator>
+                    
                 </div>
                 <div >
-                    <asp:Button runat="server" class="btn btn-primay" Text="Buscar"/> 
+                    <asp:Button runat="server" class="btn btn-primay" Text="Buscar" OnClick="Unnamed2_Click"/> 
                 </div>
             </div>
         </div>
 
        <center>
-        <div class="alert alert-dismissible alert-success"/>   
+        <div class="alert alert-dismissible alert-success" style="background-color: #FFFFFF"/>   
      <div class="row 50%">
     <div>
         <asp:GridView ID="GridViewVenta" runat="server" class="bg-primary" CellPadding="4" ForeColor="#333333" GridLines="None" Width="961px" >

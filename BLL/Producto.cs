@@ -11,23 +11,23 @@ namespace BLL
     {
         public int IdProducto { get; set; }
         public string Descripcion { get; set; }
-        public float Costo { get; set; }
-        public float Precio { get; set; }
+        public int Costo { get; set; }
+        public int Precio { get; set; }
 
 
         public Producto()
         {
             this.IdProducto = 0;
             this.Descripcion = "";
-            this.Costo = 0f;
-            this.Precio = 0f;
+            this.Costo = 0;
+            this.Precio = 0;
         }
 
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Producto (IdProducto, Descripcion, Costo, Precio) values('" + this.IdProducto + "','" + this.Descripcion + "','" + this.Costo +"','"+ this.Precio+ "') Select @@Identity"));
+            retorno = conexion.Ejecutar(string.Format("insert into Producto(Descripcion, Costo, Precio) values('" + this.Descripcion + "','" + this.Costo +"','"+ this.Precio+ "')"));
             return retorno;
         }
 
@@ -35,7 +35,8 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("update Producto set Descripcion, Costo, Precio) values( where IdProducto=" + this.IdProducto));
+           
+            retorno = conexion.Ejecutar(string.Format("update Producto set Descripcion='"+this.Descripcion+"', Costo='"+this.Costo+"', Precio='"+this.Precio+"' where IdProducto=" + this.IdProducto));
             return retorno;
         }
 
@@ -59,8 +60,8 @@ namespace BLL
                 {
                     IdProducto = (int)dt.Rows[0]["IdProducto"];
                     Descripcion = dt.Rows[0]["Descripcion"].ToString();
-                    Costo = (float)dt.Rows[0]["Costo"];
-                    Precio = (float)dt.Rows[0]["Precio"];
+                    Costo = (int)dt.Rows[0]["Costo"];
+                    Precio = (int)dt.Rows[0]["Precio"];
                 }
             }
             catch (Exception ex)

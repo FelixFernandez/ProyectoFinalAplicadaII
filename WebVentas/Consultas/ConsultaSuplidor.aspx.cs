@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace WebVentas.Consultas
 {
@@ -14,5 +15,32 @@ namespace WebVentas.Consultas
 
         }
 
+        public string Mostrar()
+        {
+           Suplidor  suplidor = new Suplidor();
+
+            string filtro = "";
+
+            if (string.IsNullOrWhiteSpace(TextBoxBuscar.Text))
+            {
+                filtro = "1=1";
+            }
+            else
+            {
+
+                filtro = DropDownListFiltro.SelectedValue + "like '%" + TextBoxBuscar.Text + "%'";
+
+                GridViewSuplidor.DataSource = suplidor.Listado("suplidor.IdSuplidor as Id, Nombre, Apellido, Direccion, Telefono, correo, Empresa", "IdSuplidor = " + TextBoxBuscar.Text, " ");
+                GridViewSuplidor.DataBind();
+                
+
+            }
+            return filtro;
+        }
+
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
+            Mostrar();
+        }
     }
 }

@@ -13,13 +13,13 @@ namespace WebVentas {
     public partial class Login {
         
         /// <summary>
-        /// TextBoxUsuario control.
+        /// TextBoxNombreUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNombreUsuario;
         
         /// <summary>
         /// TextBoxContraseña control.
@@ -29,5 +29,14 @@ namespace WebVentas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxContraseña;
+        
+        /// <summary>
+        /// ButtonIniciarSesion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonIniciarSesion;
     }
 }

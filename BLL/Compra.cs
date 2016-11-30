@@ -27,7 +27,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Compra (IdCompra, IdSuplidor, Fecha, TotalCompra) values('"+this.IdCompra+ "','" + this.IdSuplidor + "','" + this.Fecha + "','" + this.TotalCompra + "') Select @@Identity"));
+            retorno = conexion.Ejecutar(string.Format("insert into Compra (IdSuplidor, Fecha, TotalCompra) values('"+this.IdCompra+ "','" + this.IdSuplidor + "','" + this.Fecha + "','" + this.TotalCompra + "')"));
             return retorno;
         }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroVenta.aspx.cs" Inherits="WebVentas.Registros.Venta" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroVenta.aspx.cs" Inherits="WebVentas.Registros.RegistroVenta" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -7,7 +7,7 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
         <fieldset class="container">
-           <h1><strong>Registro De Compra</strong></h1>
+           <h1><strong>Registro De Venta</strong></h1>
             <div class="progress">
                 <div class="progress-bar" style="width: 100%;"></div>
             </div>
@@ -15,10 +15,13 @@
             <div class="form-group">
                 <div class="row 50%">
                     <div class="col-md-5">
-                        <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxVentaID" placeholder="VentaID"></asp:TextBox>
+                        <asp:TextBox runat="server" MaxLength="10"  type="text" class="form-control" id="TextBoxVentaID" placeholder="VentaID"></asp:TextBox>
                     </div>
                     <div>
-                        <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" />
+                        <asp:Button ValidationGroup="ValidarBuscar" ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
+                             <asp:requiredfieldvalidator  validationgroup="ValidarBuscar" ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="*" ForeColor="red" CssClass="auto-style1"></asp:requiredfieldvalidator>
+                        <asp:RegularExpressionValidator ValidationGroup="ValidarBuscar" ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="*" ValidationExpression="^[0-9]*" ForeColor="red" CssClass="auto-style1"></asp:RegularExpressionValidator>                                      
+                   
                     </div>
                </div>
             </div>
@@ -30,27 +33,16 @@
                     </div>
                 </div>
              </div>
-
-        <div class="form-group">
-            <div class="row 50%">
-                <div class="col-md-12">
-                   <asp:TextBox runat="server" class="form-control" id="TextBoxListProducto" placeholder="Producto"></asp:TextBox>
-                </div>
-           </div>
-        </div>
       
        <div class="form-group">
             <div class="row 50%">
-                <div class="col-md-6">
+                <div class="col-md-11">
                 
-                    <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxPrecio" placeholder="Precio"></asp:TextBox>
+                    <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxTotalVenta" placeholder="Precio" MaxLength="10"></asp:TextBox>
                
                     
                 </div>
-               
-                <div class="col-md-5">
-                <asp:TextBox runat="server"  type="number" class="form-control" id="TextBoxCantidad" placeholder="Cantidad"></asp:TextBox>
-            </div>
+              
                 <div>
                         <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="agregar" />
                     </div>
@@ -60,12 +52,38 @@
       <div class="form-group">
             <div class="row 50%">
       <div class="col-md-4">
-        <asp:button runat="server" Text="Eliminar" type="reset" class="btn btn-danger"></asp:button>
-        <asp:button runat="server" Text="Nuevo" type="submit" class="btn btn-success"></asp:button>
-        <asp:button runat="server" Text="Guardar" type="submit" class="btn btn-primary"></asp:button>
+        <asp:button ValidationGroup="ValidarEliminar" runat="server" Text="Eliminar" type="reset" class="btn btn-danger" OnClick="Unnamed3_Click"></asp:button>
+           <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator6" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
+          <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="" ></asp:requiredfieldvalidator>
+                    
+
+        <asp:button runat="server" Text="Nuevo" type="submit" class="btn btn-success" OnClick="Unnamed4_Click"></asp:button>
+        <asp:button ValidationGroup="ValidarGuardar" runat="server" Text="Guardar" type="submit" class="btn btn-primary" OnClick="Guardar_Click"></asp:button>
       </div>
     </div>
           </div>
+
+             <div class="row 50%">
+            <div class="well">
+                <div class="text-danger">
+                    <div>
+                        <asp:requiredfieldvalidator validationgroup="ValidarGuardar" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="*ID NO VALIDO!... por favor revise el id" ></asp:requiredfieldvalidator>
+                    <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxVentaID" ErrorMessage="*ID NO VALIDO!... por favor revise el id" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
+                    </div>
+                    
+                    <div>
+                        <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxFecha" ErrorMessage="*Fecha NO VALIDO!!... por favor revise el fecha"></asp:requiredfieldvalidator> 
+                    </div>
+                    <div>
+                        <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxTotalVenta" ErrorMessage="*venta NO VALIDO!!... por favor revise el fecha"></asp:requiredfieldvalidator>             
+                    <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxTotalVenta" ErrorMessage="*Ingrese un dato valido" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
+                    
+                         </div>
+
+
+                </div> 
+            </div>
+        </div>
   </fieldset>
 </asp:Content>
 

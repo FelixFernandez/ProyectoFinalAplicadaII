@@ -7,10 +7,9 @@
    
     <link href="/Content/StyleSheet1.css" rel="stylesheet" />
     
-    <script src="/Scripts/bootstrap.js"></script>
-    <script src="/Scripts/jquery-3.1.1.js"></script>
-    
+    <script src="/Scripts/jquery-3.1.1.js"></script>  
     <script src="/Scripts/bootstrap.min.js"></script>
+
     <script src="/Scripts/jquery-3.1.1.min.js"></script>
     
      <title>WebVentas</title>
@@ -70,6 +69,11 @@
         </li>
       </ul>
 
+
+<ul class="nav navbar-nav navbar-right">
+        <li><a href="/Login/Login.aspx">Cerrar Sesion</a></li>
+      </ul>
+
     </div>
   </div>
 </nav>
@@ -92,7 +96,7 @@
         <script src="/Scripts/jquery-3.1.1.slim.min.js"></script>
     </form>
 
-    <footer class="bg-primary">
+ <!--   <footer class="bg-primary">
       
 
         <blockquote>
@@ -115,6 +119,7 @@
         </div>
 
 
-    </footer>
+    </footer> -->
+
     </body>
 </html>

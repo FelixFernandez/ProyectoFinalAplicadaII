@@ -23,10 +23,11 @@ namespace WebVentas.Registros
             TextBoxDireccion.Text = string.Empty;
             TextBoxTelefono.Text = string.Empty;
             TextBoxCorreo.Text = string.Empty;
-            TextBoxEmpresa.Text = string.Empty;         
+            TextBoxEmpresa.Text = string.Empty;
         }
 
-        public void LlenarCampos()
+
+        protected void Guardar_Click(object sender, EventArgs e)
         {
             Suplidor suplidor = new Suplidor();
 
@@ -37,30 +38,55 @@ namespace WebVentas.Registros
             suplidor.Telefono = TextBoxTelefono.Text;
             suplidor.Correo = TextBoxCorreo.Text;
             suplidor.Empresa = TextBoxEmpresa.Text;
-            
-        }
 
-        protected void Guardar_Click(object sender, EventArgs e)
-        {
-            Suplidor suplidor = new Suplidor();
-
-            suplidor.IdSuplidor = Convert.ToInt32(TextBoxSuplidorID.Text);
-            LlenarCampos();
-
-            if(suplidor.IdSuplidor > 0)
+            if (Page.IsValid)// eso es para que me valide los campos
             {
-                suplidor.Insertar();
-                Response.Write("guardo");
-            }
-            else
-            {
-                Response.Write("no guardo");
+                if (suplidor.IdSuplidor > 0)
+                {
+                    if (suplidor.Insertar())
+                    {
+
+                        Limpiar();
+                        Response.Write("El Suplidor Se Guardo Correctamente");
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("El Suplidor no Se Guardo Correctamente");
+                    }
+
+
+                }
+
+                else
+                {
+                    if (suplidor.Modificar())
+                    {
+                        Limpiar();
+                        Response.Write("El Suplidor Se Modifico Correctamente");
+                    }
+                    else
+                    {
+                        Limpiar();
+                        Response.Write("El Suplidor no Se modifico Correctamente");
+                    }
+                }
+
+
+
             }
         }
+    
+        
+
+
+
 
         protected void Nuevo_Click(object sender, EventArgs e)
         {
+
             Limpiar();
+
         }
 
         protected void Eliminar_Click(object sender, EventArgs e)
@@ -68,16 +94,46 @@ namespace WebVentas.Registros
             Suplidor suplidor = new Suplidor();
 
             suplidor.IdSuplidor = Convert.ToInt32(TextBoxSuplidorID.Text);
-            LlenarCampos();
+           
 
             if (suplidor.IdSuplidor > 0)
             {
                 suplidor.Eliminar();
-                Response.Write("se elimino");
+                Response.Write("El Suplidor Se Elimino Correctamente");
             }
             else
             {
-                Response.Write("no se elimino");
+                Response.Write("El Suplidor No Se Elimino");
+            }
+        }
+
+        private void Buscar(Suplidor suplidor)
+        {
+            TextBoxSuplidorID.Text = suplidor.IdSuplidor.ToString();
+            TextBoxNombre.Text = suplidor.Nombre.ToString();
+            TextBoxApellido.Text = suplidor.Apellido.ToString();
+            TextBoxDireccion.Text = suplidor.Direccion.ToString();
+            TextBoxTelefono.Text = suplidor.Telefono.ToString();
+            TextBoxCorreo.Text = suplidor.Correo.ToString();
+            TextBoxEmpresa.Text = suplidor.Empresa.ToString();
+        }
+
+        protected void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+            Suplidor suplidor = new Suplidor();
+            suplidor.IdSuplidor = Convert.ToInt32(TextBoxSuplidorID.Text);
+
+            if (Page.IsValid)
+            {
+                if (suplidor.Buscar(suplidor.IdSuplidor))
+                {
+                    Buscar(suplidor);
+                }
+                else
+                {
+                    Response.Write("El Id No Existe");
+
+                }
             }
         }
     }
