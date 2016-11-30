@@ -36,18 +36,26 @@
       
        <div class="form-group">
             <div class="row 50%">
-                <div class="col-md-11">
+                <div class="col-md-4">     
+                     <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxTotalVenta" placeholder="Precio" MaxLength="10"></asp:TextBox>
+               </div>
+
+       
+                <div class="col-md-5">      
+                    <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxCantidad" placeholder="Cantidad" MaxLength="10"></asp:TextBox>
+               </div>
                 
-                    <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxTotalVenta" placeholder="Precio" MaxLength="10"></asp:TextBox>
-               
-                    
+               <div>
+             <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="agregar" OnClick="ButtonAgregar_Click" />
+               </div>
                 </div>
-              
-                <div>
-                        <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="agregar" />
-                    </div>
-                </div>
-    </div>
+
+       </div>
+                      
+                
+         
+            
+            
 
       <div class="form-group">
             <div class="row 50%">
@@ -62,6 +70,11 @@
       </div>
     </div>
           </div>
+
+            <div>
+                 <asp:GridView ID="VentaProductoGridView" runat="server">
+            </asp:GridView>
+            </div>
 
              <div class="row 50%">
             <div class="well">

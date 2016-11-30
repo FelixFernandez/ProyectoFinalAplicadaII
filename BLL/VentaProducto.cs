@@ -20,10 +20,9 @@ namespace BLL
             this.Cantida = 0;
         }
 
-        public VentaProducto(int idventaproducto, int idventa, int cantidad)
+        public VentaProducto( int cantidad)
         {
-            IdVentaProducto = idventaproducto;
-            IdVenta = idventa;
+           
             Cantida = cantidad;
 
         }

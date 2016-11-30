@@ -67,6 +67,15 @@ namespace WebVentas.Registros {
         protected global::System.Web.UI.WebControls.TextBox TextBoxTotalVenta;
         
         /// <summary>
+        /// TextBoxCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCantidad;
+        
+        /// <summary>
         /// ButtonAgregar control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace WebVentas.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        
+        /// <summary>
+        /// VentaProductoGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView VentaProductoGridView;
         
         /// <summary>
         /// RequiredFieldValidator2 control.

@@ -108,5 +108,25 @@ namespace WebVentas.Registros
                 Response.Write("El Usuario No Se Elimino");
             }
         }
+
+        protected void ButtonAgregar_Click(object sender, EventArgs e)
+        {
+            Venta venta;
+
+            if (Session["Venta"] == null)
+                Session["Venta"] = new Venta();
+            venta = (Venta)Session["Venta"];
+
+            VentaProducto ventaproducto = new VentaProducto();
+
+            ventaproducto.Cantida = int.Parse(TextBoxCantidad.Text);
+
+            venta.AgregarVentaProducto(ventaproducto.Cantida);
+
+            Session["Venta"] = venta;
+
+            VentaProductoGridView.DataSource = venta.Tipo;
+            VentaProductoGridView.DataBind();
+        }
     }
 }
