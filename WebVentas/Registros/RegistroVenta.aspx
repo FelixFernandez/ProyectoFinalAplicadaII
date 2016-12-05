@@ -29,14 +29,14 @@
              <div class="form-group">
                 <div class="row 50%">
                     <div class="col-md-12">
-                        <asp:TextBox runat="server"  type="date" class="form-control" id="TextBoxFecha" placeholder="Fecha" TextMode="date"></asp:TextBox>
+                        <asp:TextBox runat="server"  type="date" class="form-control" id="TextBoxFecha" placeholder="Fecha" TextMode="Date"></asp:TextBox>
                     </div>
                 </div>
              </div>
       
        <div class="form-group">
             <div class="row 50%">
-                <div class="col-md-4">     
+                <div class="col-md-6">     
                      <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxTotalVenta" placeholder="Precio" MaxLength="10"></asp:TextBox>
                </div>
 

@@ -15,7 +15,6 @@ namespace BLL
         public string Correo { get; set; }
         public string Contraseña { get; set; }
         public string NombreUsuario { get; set; }
-        public string Imagen { get; set; }
 
         public Usuario()
         {
@@ -25,7 +24,6 @@ namespace BLL
             this.Correo = "";
             this.Contraseña = "";
             this.NombreUsuario = "";
-            this.Imagen = "";
         }
 
         public bool Login()
@@ -46,7 +44,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Usuario(Nombre, Apellido, Correo, NombreUsuario, Contraseña, Imagen) Values('" + this.Nombre + "','" + this.Apellido + "','" + this.Correo + "','" + this.NombreUsuario + "','" + this.Contraseña + "','" + this.Imagen + "')"));
+            retorno = conexion.Ejecutar(string.Format("insert into Usuario(Nombre, Apellido, Correo, NombreUsuario, Contraseña) Values('" + this.Nombre + "','" + this.Apellido + "','" + this.Correo + "','" + this.NombreUsuario + "','" + this.Contraseña +  "')"));
             return retorno;
         }
 
@@ -55,7 +53,7 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno;
 
-            retorno = conexion.Ejecutar(string.Format("update Usuario set Nombre='"+this.Nombre+"',Apellido='"+this.Apellido+"',Correo='"+this.Correo+"', Contraseña='"+this.Contraseña+"', NombreUsuario='"+this.NombreUsuario+"', Imagen='"+this.Imagen+ "'where IdUsuario ="+ this.IdUsuario));
+            retorno = conexion.Ejecutar(string.Format("update Usuario set Nombre='"+this.Nombre+"',Apellido='"+this.Apellido+"',Correo='"+this.Correo+"', Contraseña='"+this.Contraseña+"', NombreUsuario='"+this.NombreUsuario+ "'where IdUsuario ="+ this.IdUsuario));
 
             return retorno;
         }
@@ -84,7 +82,6 @@ namespace BLL
                     Correo = dt.Rows[0]["Correo"].ToString();
                     Contraseña = dt.Rows[0]["Contraseña"].ToString();
                     NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
-                    Imagen = dt.Rows[0]["Imagen"].ToString();
                 }
             }
             catch (Exception ex)

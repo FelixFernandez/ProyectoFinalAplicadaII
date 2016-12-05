@@ -6,20 +6,21 @@ using System.Text;
 using DAL;
 
 namespace BLL
+
 {
     public class Venta : ClaseMaestra
     {
         public int IdVenta { get; set; }
         public string Fecha { get; set; }
-        public int TotalVenta { get; set; }
+        public double TotalVenta { get; set; }
 	    public List<VentaProducto>Tipo {get; set;}
 
         public Venta()
         {
             this.IdVenta = 0;
             this.Fecha = "";
-            this.TotalVenta =0;
-	    Tipo = new List<VentaProducto>();
+            this.TotalVenta =0f;
+	        Tipo = new List<VentaProducto>();
 
         }
 	
@@ -34,17 +35,9 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
 		    VentaProducto ventaproducto = new VentaProducto();
             bool retorno;
-            try
-            {
-                retorno = conexion.Ejecutar(string.Format("insert into Venta (Fecha, TotalVenta) values('" + this.IdVenta + "','" + this.Fecha + "','" + this.TotalVenta + "')"));
-                foreach (VentaProducto item in Tipo)
-                {
-                    conexion.Ejecutar(string.Format("insert into VentaProducto(Cantidad) Values({1})", retorno, (int)item.Cantida));
-                }
-            }catch(Exception e)
-            {
-                throw e;
-            }
+           
+                retorno = conexion.Ejecutar(string.Format("insert into Venta (Fecha, TotalVenta) values('" + this.Fecha + "','" + this.TotalVenta + "')"));
+          
 		return retorno;
         }
 
@@ -53,22 +46,9 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno;
 
-            try
-            {
+          
                 retorno = conexion.Ejecutar(string.Format("update Venta set Fecha='" + this.Fecha + "', TotalVenta='" + this.TotalVenta + "'where IdVenta=" + this.IdVenta));
-                if (retorno)
-                {
-                    conexion.Ejecutar(string.Format("Delete from VentaProducto where VentaId =" + this.IdVenta.ToString()));
-
-                    foreach (VentaProducto item in Tipo)
-                    {
-                        conexion.Ejecutar(string.Format("insert into VentaProducto(Cantidad) Values({1})", retorno, (int)item.Cantida));
-                    }
-                }
-            } catch(Exception e)
-            {
-                throw e;
-            }
+            
                 return retorno;
         }
 
@@ -77,10 +57,7 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             bool retorno;
             retorno = conexion.Ejecutar(string.Format("delete from Venta where IdVenta = " + this.IdVenta));
-            if (retorno)
-            {
-                conexion.Ejecutar(string.Format("Delete from VentaProducto where VentaId =" + this.IdVenta.ToString()));
-            }
+           
             return retorno;
         }
 
@@ -96,7 +73,7 @@ namespace BLL
                 {
                     IdVenta = (int)dt.Rows[0]["IdVenta"];
                     Fecha = dt.Rows[0]["Fecha"].ToString();
-                    TotalVenta = (int)dt.Rows[0]["TotalVenta"];
+                    TotalVenta = (double)dt.Rows[0]["TotalVenta"];
                 }
             }
             catch (Exception ex)

@@ -11,16 +11,16 @@ namespace BLL
     {
         public int IdProducto { get; set; }
         public string Descripcion { get; set; }
-        public int Costo { get; set; }
-        public int Precio { get; set; }
+        public double Costo { get; set; }
+        public double Precio { get; set; }
 
 
         public Producto()
         {
             this.IdProducto = 0;
             this.Descripcion = "";
-            this.Costo = 0;
-            this.Precio = 0;
+            this.Costo = 0f;
+            this.Precio = 0f;
         }
 
         public override bool Insertar()
@@ -60,8 +60,8 @@ namespace BLL
                 {
                     IdProducto = (int)dt.Rows[0]["IdProducto"];
                     Descripcion = dt.Rows[0]["Descripcion"].ToString();
-                    Costo = (int)dt.Rows[0]["Costo"];
-                    Precio = (int)dt.Rows[0]["Precio"];
+                    Costo = (double)dt.Rows[0]["Costo"];
+                    Precio = (double)dt.Rows[0]["Precio"];
                 }
             }
             catch (Exception ex)

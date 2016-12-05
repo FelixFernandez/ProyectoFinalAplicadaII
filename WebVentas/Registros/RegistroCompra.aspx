@@ -35,16 +35,18 @@
          <div class="form-group">
             <div class="row 50%">
                 <div class="col-md-6">
-                    <asp:DropDownList  runat="server" class="form-control" id="DropDownListSuplidor">
+                    <asp:DropDownList  runat="server" class="form-control" id="DropDownListSuplidor" DataSourceID="SqlDataSourceSuplidor" DataTextField="Nombre" DataValueField="Nombre">
                         <asp:ListItem>Suplidor</asp:ListItem>
                         <asp:ListItem>hola como estas</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSourceSuplidor" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT [Nombre] FROM [Suplidor]"></asp:SqlDataSource>
                 </div>
                 <div class="col-md-6">
-                    <asp:DropDownList runat="server" class="form-control"  id="DropDownListProducto" DataTextField="Producto">
+                    <asp:DropDownList runat="server" class="form-control"  id="DropDownListProducto" DataTextField="Descripcion" DataSourceID="SqlDataSourceProducto" DataValueField="Descripcion">
                         <asp:ListItem>Producto</asp:ListItem>
                         <asp:ListItem>hola como estas</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSourceProducto" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT [Descripcion] FROM [Producto]"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

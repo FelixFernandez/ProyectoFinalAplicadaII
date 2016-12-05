@@ -18,6 +18,6 @@
         </LocalReport>
     </rsweb:ReportViewer>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT * FROM [Compra]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConStr %>" SelectCommand="SELECT * FROM [Venta]"></asp:SqlDataSource>
           </fieldset>
 </asp:Content>

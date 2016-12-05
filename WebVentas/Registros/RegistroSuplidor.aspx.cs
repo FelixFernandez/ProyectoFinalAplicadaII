@@ -41,7 +41,7 @@ namespace WebVentas.Registros
 
             if (Page.IsValid)// eso es para que me valide los campos
             {
-                if (suplidor.IdSuplidor > 0)
+                if (TextBoxSuplidorID.Text == "")
                 {
                     if (suplidor.Insertar())
                     {

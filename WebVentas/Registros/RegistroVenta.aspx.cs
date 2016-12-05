@@ -28,7 +28,7 @@ namespace WebVentas.Registros
             Venta venta = new Venta();
            
             venta.Fecha = TextBoxFecha.Text;
-            venta.TotalVenta = Convert.ToInt32(TextBoxTotalVenta.Text);
+            venta.TotalVenta = double.Parse(TextBoxTotalVenta.Text);
             
 
             if (Page.IsValid)// eso es para que me valide los campos

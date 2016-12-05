@@ -29,8 +29,8 @@ namespace WebVentas.Registros
             Producto producto = new Producto();
           
             producto.Descripcion = TextBoxDescripcion.Text;
-            producto.Costo = Convert.ToInt32(TextBoxCosto.Text);
-            producto.Precio = Convert.ToInt32(TextBoxPrecio.Text);
+            producto.Costo = double.Parse(TextBoxCosto.Text);
+            producto.Precio = double.Parse(TextBoxPrecio.Text);
 
             if (Page.IsValid)
             {
@@ -109,6 +109,7 @@ namespace WebVentas.Registros
                 else
                 {
                     Response.Write("El Id No Existe");
+                    Limpiar();
 
                 }
             }
