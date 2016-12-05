@@ -8,6 +8,7 @@ namespace BLL
 {
     public abstract class ClaseMaestra
     {
+
         public abstract bool Insertar();
         public abstract bool Modificar();
         public abstract bool Eliminar();
