@@ -8,6 +8,7 @@
         }
     </style>
 
+
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,7 +28,8 @@
                     <div>
                         <asp:Button validationgroup="ValidarBuscar" ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />     
                         <asp:requiredfieldvalidator  validationgroup="ValidarBuscar" ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*" ForeColor="red" CssClass="auto-style1"></asp:requiredfieldvalidator>
-                        <asp:RegularExpressionValidator ValidationGroup="ValidarBuscar" ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*" ValidationExpression="^[0-9]*" ForeColor="red" CssClass="auto-style1"></asp:RegularExpressionValidator>                                      
+                        <asp:RegularExpressionValidator ValidationGroup="ValidarBuscar" ID="RegularExpressionValidator4" 
+                            runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*" ValidationExpression="^[0-9]*" ForeColor="red" CssClass="auto-style1"></asp:RegularExpressionValidator>                                      
                     </div>
                 </div>      
             </div>

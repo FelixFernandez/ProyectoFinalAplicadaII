@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
+using WebVentas;
 
 namespace WebVentas.Registros
 {
@@ -12,6 +12,7 @@ namespace WebVentas.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
 
         public void Limpiar()
@@ -41,12 +42,13 @@ namespace WebVentas.Registros
                     if (usuario.Insertar())
                     {
                         Limpiar();
-                        Response.Write("El Usuario Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
+                        
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("El Usuario no Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
                 }
                 else
@@ -55,12 +57,12 @@ namespace WebVentas.Registros
                     if (usuario.Modificar())
                     {
                         Limpiar();
-                        Response.Write("El Usuario Se Modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("El Usuario no Se modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
             }
@@ -86,12 +88,12 @@ namespace WebVentas.Registros
                 if (usuario.IdUsuario > 0)
                 {
                     usuario.Eliminar();
-                    Response.Write("El Usuario Se Elimino Correctamente");
+                    Validaciones.ShowToastr(this, "Exito", "Eliminado correctamente!", "success");
                 }
                 else
                 {
-                    Response.Write("El Usuario No Se Elimino");
-                }
+                    Validaciones.ShowToastr(this, "Error", "Error al eliminar", "error");
+                 }
             }
             
             
@@ -120,7 +122,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
-                    Response.Write("El Id No Existe");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
 
                 } 
             }
