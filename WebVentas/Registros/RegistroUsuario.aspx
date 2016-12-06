@@ -38,12 +38,12 @@
                          <div class="row">
                              <div class="col-md-6">
                                  <asp:TextBox  validationgroup="ValidarGuardar"  runat="server"  type="text" class="form-control" id="TextBoxNombre" placeholder="Nombre" MaxLength="30"></asp:TextBox>
-                                 <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*Debe ingresar un nombre!!..." ForeColor="Red"></asp:requiredfieldvalidator> 
+                                 <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*Debe ingresar un nombre" ForeColor="Red"></asp:requiredfieldvalidator> 
                                  <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$" ForeColor="Red"></asp:RegularExpressionValidator>            
                              </div>  
                              <div class="col-md-6">
                                 <asp:TextBox  validationgroup="ValidarGuardar"  runat="server"  type="text" class="form-control" id="TextBoxApellido" placeholder="Apellido" MaxLength="30"></asp:TextBox>
-                                 <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxApellido" ErrorMessage="*Debe ingresar un apellido!!..." ForeColor="Red"></asp:requiredfieldvalidator>  
+                                 <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxApellido" ErrorMessage="*Debe ingresar un apellido" ForeColor="Red"></asp:requiredfieldvalidator>  
                                  <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxApellido" ErrorMessage="*Ingrese solo letras" ValidationExpression="^[A-Za-z]*$" ForeColor="red"></asp:RegularExpressionValidator>           
                              </div>                          
                          </div>  
@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <asp:TextBox validationgroup="ValidarGuardar"  runat="server"  type="Email" class="form-control" id="TextBoxCorreo" placeholder="Correo" MaxLength="50"></asp:TextBox>
-                                <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxCorreo" ErrorMessage="*Debe ingresar un correo!!..." ForeColor="Red"></asp:requiredfieldvalidator>             
+                                <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxCorreo" ErrorMessage="*Debe ingresar un correo" ForeColor="Red"></asp:requiredfieldvalidator>             
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <asp:TextBox validationgroup="ValidarGuardar" runat="server"  type="text" class="form-control" id="TextBoxNombreUsuario" placeholder="Nombre Usuario" MaxLength="25"></asp:TextBox>
-                                <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxNombreUsuario" ErrorMessage="*Debe ingresar un nombre de usuario!!..." ForeColor="red"></asp:requiredfieldvalidator>             
+                                <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxNombreUsuario" ErrorMessage="*Debe ingresar un nombre de usuario" ForeColor="red"></asp:requiredfieldvalidator>             
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <div class="row">
                          <div class="col-md-12">
                             <asp:TextBox validationgroup="ValidarGuardar"  runat="server" type="password" class="form-control" id="TextBoxContraseña" placeholder="Contraseña" MaxLength="17"></asp:TextBox>
-                            <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxContraseña" ErrorMessage="*Debe ingresar una contraseña!!..." ForeColor="red"></asp:requiredfieldvalidator>             
+                            <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxContraseña" ErrorMessage="*Debe ingresar una contraseña" ForeColor="red"></asp:requiredfieldvalidator>             
                     
                          </div>
                         </div>
