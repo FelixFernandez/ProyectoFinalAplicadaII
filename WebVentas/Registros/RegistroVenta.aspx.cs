@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
+using WebVentas;
 
 namespace WebVentas.Registros
 {
@@ -38,12 +38,13 @@ namespace WebVentas.Registros
                     if (venta.Insertar())
                     {
                         Limpiar();
-                        Response.Write("La venta Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
+
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("La venta no Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
                 }
                 else
@@ -52,12 +53,12 @@ namespace WebVentas.Registros
                     if (venta.Modificar())
                     {
                         Limpiar();
-                        Response.Write("La venta Se Modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("La venta no Se modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
             }
@@ -82,7 +83,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
-                    Response.Write("El Id No Existe");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
 
                 }
             }
@@ -101,11 +102,11 @@ namespace WebVentas.Registros
             if (venta.IdVenta > 0)
             {
                 venta.Eliminar();
-                Response.Write("El Usuario Se Elimino Correctamente");
+                Validaciones.ShowToastr(this, "Exito", "Eliminado correctamente!", "success");
             }
             else
             {
-                Response.Write("El Usuario No Se Elimino");
+                Validaciones.ShowToastr(this, "Error", "Error al eliminar", "error");
             }
         }
 

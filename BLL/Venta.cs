@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using DAL;
 
-namespace BLL
+namespace WebVentas
 
 {
     public class Venta : ClaseMaestra
@@ -44,11 +44,8 @@ namespace BLL
         public override bool Modificar()
         {
             ConexionDb conexion = new ConexionDb();
-            bool retorno;
-
-          
-                retorno = conexion.Ejecutar(string.Format("update Venta set Fecha='" + this.Fecha + "', TotalVenta='" + this.TotalVenta + "'where IdVenta=" + this.IdVenta));
-            
+            bool retorno;        
+                retorno = conexion.Ejecutar(string.Format("update Venta set Fecha='" + this.Fecha + "', TotalVenta='" + this.TotalVenta + "'where IdVenta=" + this.IdVenta));            
                 return retorno;
         }
 
@@ -56,8 +53,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("delete from Venta where IdVenta = " + this.IdVenta));
-           
+            retorno = conexion.Ejecutar(string.Format("delete from Venta where IdVenta = " + this.IdVenta));        
             return retorno;
         }
 

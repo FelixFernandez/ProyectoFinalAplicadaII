@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
+using WebVentas;
 
 namespace WebVentas.Registros
 {
@@ -47,12 +47,13 @@ namespace WebVentas.Registros
                     {
 
                         Limpiar();
-                        Response.Write("El Suplidor Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
+
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("El Suplidor no Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
 
 
@@ -64,12 +65,12 @@ namespace WebVentas.Registros
                     if (suplidor.Modificar())
                     {
                         Limpiar();
-                        Response.Write("El Suplidor Se Modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("El Suplidor no Se modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
 
@@ -100,11 +101,11 @@ namespace WebVentas.Registros
             if (suplidor.IdSuplidor > 0)
             {
                 suplidor.Eliminar();
-                Response.Write("El Suplidor Se Elimino Correctamente");
+                Validaciones.ShowToastr(this, "Exito", "Eliminado correctamente!", "success");
             }
             else
             {
-                Response.Write("El Suplidor No Se Elimino");
+                Validaciones.ShowToastr(this, "Error", "Error al eliminar", "error");
             }
         }
 
@@ -132,7 +133,8 @@ namespace WebVentas.Registros
                 }
                 else
                 {
-                    Response.Write("El Id No Existe");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
+
 
                 }
             }

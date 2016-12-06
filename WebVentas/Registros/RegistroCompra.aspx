@@ -19,7 +19,7 @@
                     <asp:TextBox runat="server" TextMode="number" class="form-control" id="TextBoxCompraID" placeholder="CompraID"></asp:TextBox>
                 </div>
                 <div>
-                    <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" />
+                    <asp:Button ID="ButtonBuscar" class="btn btn-warning" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />
                 </div>
             </div>
         </div>
@@ -54,10 +54,10 @@
          <div class="form-group">
             <div class="row 50%">
                 <div class="col-md-6">
-                    <asp:TextBox runat="server" TextMode="number" class="form-control"   id="TextBoxPrecio" placeholder="Precio"></asp:TextBox>
+                    <asp:TextBox runat="server" Type="text" class="form-control"   id="TextBoxTotalCompra" placeholder="Precio"></asp:TextBox>
                 </div>
                 <div class="col-md-5">
-                     <asp:TextBox runat="server" TextMode="number" class="form-control" id="TextBoxCantidad" placeholder="Cantidad"></asp:TextBox>
+                     <asp:TextBox runat="server" Type="text" class="form-control" id="TextBoxCantidad" placeholder="Cantidad"></asp:TextBox>
                 </div>
                 <div>
                         <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="agregar" />

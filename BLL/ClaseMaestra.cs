@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace BLL
+namespace WebVentas
 {
     public abstract class ClaseMaestra
     {

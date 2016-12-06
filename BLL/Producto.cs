@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using DAL;
 
-namespace BLL
+namespace WebVentas
 {
     public class Producto: ClaseMaestra
     {

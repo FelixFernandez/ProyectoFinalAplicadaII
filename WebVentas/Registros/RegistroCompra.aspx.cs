@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
+using WebVentas;
 namespace WebVentas.Registros
 {
     public partial class RegistroCompra : System.Web.UI.Page
@@ -38,12 +38,12 @@ namespace WebVentas.Registros
                     if (compra.Insertar())
                     {
                         Limpiar();
-                        Response.Write("La Compra Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Insertado correctamente!", "success");
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("La Compra no Se Guardo Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al insertar", "error");
                     }
                 }
                 else
@@ -52,12 +52,12 @@ namespace WebVentas.Registros
                     if (compra.Modificar())
                     {
                         Limpiar();
-                        Response.Write("La Compra Se Modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Exito", "Modificado correctamente!", "success");
                     }
                     else
                     {
                         Limpiar();
-                        Response.Write("La Compra no Se modifico Correctamente");
+                        Validaciones.ShowToastr(this, "Error", "Error al modificar", "error");
                     }
                 }
             }
@@ -76,11 +76,11 @@ namespace WebVentas.Registros
             if (compra.IdCompra > 0)
             {
                 compra.Eliminar();
-                Response.Write("se elimino");
+                Validaciones.ShowToastr(this, "Exito", "Eliminado correctamente!", "success");
             }
             else
             {
-                Response.Write("no se elimino");
+                Validaciones.ShowToastr(this, "Error", "Error al eliminar", "error");
             }
         }
 
@@ -107,7 +107,7 @@ namespace WebVentas.Registros
                 }
                 else
                 {
-                    Response.Write("El Id No Existe");
+                    Validaciones.ShowToastr(this, "Advertencia", "Id no encontrado", "warning");
                 }
             }
         }

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using DAL;
 
-namespace BLL
+namespace WebVentas
 {
     public class Compra : ClaseMaestra
     {
         public int IdCompra { get; set; }
         public int IdSuplidor { get; set; }
         public string Fecha { get; set; }
-        public float TotalCompra { get; set; }
+        public double TotalCompra { get; set; }
 
         public Compra()
         {
@@ -27,7 +27,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("insert into Compra (IdSuplidor, Fecha, TotalCompra) values('"+this.IdCompra+ "','" + this.IdSuplidor + "','" + this.Fecha + "','" + this.TotalCompra + "')"));
+            retorno = conexion.Ejecutar(string.Format("insert into Compra (Fecha, TotalCompra) values('"+ this.Fecha + "','" + this.TotalCompra + "')"));
             return retorno;
         }
 
@@ -35,7 +35,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("update Compra set IdSuplidor, Fecha, TotalCompra) values('" + this.IdSuplidor + "','" + this.Fecha + "','" + this.TotalCompra + "where IdCompra = " + this.IdCompra));
+            retorno = conexion.Ejecutar(string.Format("update Compra set Fecha='" + this.Fecha + "', TotalCompra='" + this.TotalCompra + "'where IdCompra=" + this.IdCompra));
             return retorno;
         }
 
@@ -43,7 +43,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno;
-            retorno = conexion.Ejecutar(string.Format("delete from Compra where idCompra ="+this.IdCompra));
+            retorno = conexion.Ejecutar(string.Format("delete from Compra where IdCompra ="+this.IdCompra));
             return retorno;
         }
 
@@ -60,7 +60,7 @@ namespace BLL
                     IdCompra = (int)dt.Rows[0]["IdCompra"];
                     IdSuplidor = (int)dt.Rows[0]["IdSuplidor"];
                     Fecha = dt.Rows[0]["Fecha"].ToString();
-                    TotalCompra = (float)dt.Rows[0]["TotaCompra"];
+                    TotalCompra = (double)dt.Rows[0]["TotalCompra"];
                     
                 }
             }
