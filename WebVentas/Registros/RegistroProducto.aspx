@@ -41,12 +41,12 @@
                 <div class="row 50%">
                     <div class="col-md-6">
                         <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxCosto" placeholder="Costo" MaxLength="10"></asp:TextBox>
-                            <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator3" ForeColor="red" runat="server" ControlToValidate="TextBoxCosto" ErrorMessage="*Ingrese un dato valido"></asp:requiredfieldvalidator>  
+                            <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator3" ForeColor="red" runat="server" ControlToValidate="TextBoxCosto" ErrorMessage="*Debe ingresar un costo"></asp:requiredfieldvalidator>  
                         <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator3" ForeColor="red" runat="server" ControlToValidate="TextBoxCosto" ErrorMessage="*Ingrese solo numero" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>           
                     </div>
                     <div class="col-md-6">
                         <asp:TextBox runat="server"  type="tex" class="form-control" id="TextBoxPrecio" placeholder="Precio" MaxLength="10"></asp:TextBox>
-                             <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator4" ForeColor="red" runat="server" ControlToValidate="TextBoxPrecio" ErrorMessage="*Ingrese un dato valido"></asp:requiredfieldvalidator>  
+                             <asp:requiredfieldvalidator  validationgroup="ValidarGuardar" ID="RequiredFieldValidator4" ForeColor="red" runat="server" ControlToValidate="TextBoxPrecio" ErrorMessage="**Debe ingresar un precio"></asp:requiredfieldvalidator>  
                             <asp:RegularExpressionValidator ValidationGroup="ValidarGuardar" ID="RegularExpressionValidator5" runat="server" ControlToValidate="TextBoxPrecio" ErrorMessage="*Ingrese un dato valido" ForeColor="red" ValidationExpression="^[0-9]*"></asp:RegularExpressionValidator>
                     </div>
                 </div>
