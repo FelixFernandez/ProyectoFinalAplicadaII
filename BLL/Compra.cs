@@ -58,7 +58,7 @@ namespace WebVentas
                 if (dt.Rows.Count > 0)
                 {
                     IdCompra = (int)dt.Rows[0]["IdCompra"];
-                    IdSuplidor = (int)dt.Rows[0]["IdSuplidor"];
+                    IdSuplidor = (int)dt.Rows[0]["Idsuplidor"];
                     Fecha = dt.Rows[0]["Fecha"].ToString();
                     TotalCompra = (double)dt.Rows[0]["TotalCompra"];
                     

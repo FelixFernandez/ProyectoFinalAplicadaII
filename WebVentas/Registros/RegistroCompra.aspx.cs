@@ -97,7 +97,7 @@ namespace WebVentas.Registros
         {
 
             Compra compra = new Compra();
-            compra.IdCompra = int.Parse(TextBoxCompraID.Text);
+            compra.IdCompra = Convert.ToInt32(TextBoxCompraID.Text);
 
             if (Page.IsValid)
             {
