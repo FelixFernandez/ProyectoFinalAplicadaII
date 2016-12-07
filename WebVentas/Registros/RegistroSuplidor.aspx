@@ -88,21 +88,25 @@
         <div class="row">
             <div class="col-md-4">
                 <asp:button ValidationGroup="ValidarEliminar" runat="server" type="reset" class="btn btn-danger" Text="Eliminar" OnClick="Eliminar_Click"></asp:button>
+                &nbsp;
                 <asp:button runat="server" type="submit" class="btn btn-success" Text="Nuevo" OnClick="Nuevo_Click"></asp:button>
+                &nbsp;
                 <asp:button ValidationGroup="ValidarGuardar" runat="server" type="submit" class="btn btn-primary" Text="Guardar" OnClick="Guardar_Click"></asp:button>
-            </div>
+                </div>        
         </div>
+
      </div>
+         <div>
+            <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxSuplidorID" ErrorMessage="*Ingrese un id para eliminar" ForeColor="Red" ></asp:requiredfieldvalidator>
+           </div>
+           <div>
+             <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxSuplidorID" ErrorMessage="*Ingrese solo numeros" ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>
+        </div>
 
          <div class="row">
             <div class="well">
                 <div class="text-danger">
-                      <div>
-                        <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxSuplidorID" ErrorMessage="*Ingrese un id para eliminar" ForeColor="Red" ></asp:requiredfieldvalidator>
-                    </div>
-                    <div>
-                        <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator6" runat="server" ControlToValidate="TextBoxSuplidorID" ErrorMessage="*Ingrese solo numeros" ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>
-                    </div>
+                     
                  </div> 
             </div>
           </div>

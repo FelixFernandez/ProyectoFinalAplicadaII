@@ -85,22 +85,22 @@
                     <div class="row 50%">
                         <div class="col-md-4">
                             <asp:Button Id="ButtoEliminar" ValidationGroup="ValidarEliminar" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="ButtoEliminar_Click"></asp:Button>
-                             
-                            &nbsp;<asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-success" OnClick="ButtonNuevo_Click"></asp:Button>
+                             &nbsp;<asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-success" OnClick="ButtonNuevo_Click"></asp:Button>
                             &nbsp;<asp:Button validationgroup="ValidarGuardar" ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-primary" OnClick="ButtonGuardar_Click"></asp:Button>  
                        </div>
+                         <div>
+                     <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese un id para eliminar" ForeColor="Red" ></asp:requiredfieldvalidator>
+                        </div>
+           <div>
+             <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese solo numeros" ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>
+        </div>
                    </div>
                </div>
 
         <div class="row 50%">
             <div class="well">
                 <div class="text-danger">                  
-                    <div>
-                               <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese un Id para Eliminar"  ForeColor="Red" ></asp:requiredfieldvalidator>                   
-                    </div>
-                    <div>
-                        <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator6" runat="server" ControlToValidate="TextBoxUsuarioID" ErrorMessage="*Ingrese solo numeros"  ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>                 
-                    </div>
+                    
                 </div> 
             </div>
         </div>

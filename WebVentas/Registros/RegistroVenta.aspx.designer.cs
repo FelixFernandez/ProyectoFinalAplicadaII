@@ -148,15 +148,6 @@ namespace WebVentas.Registros {
         protected global::System.Web.UI.WebControls.Button ButtonAgregar;
         
         /// <summary>
-        /// VentaProductoGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView VentaProductoGridView;
-        
-        /// <summary>
         /// RequiredFieldValidator8 control.
         /// </summary>
         /// <remarks>
@@ -173,5 +164,14 @@ namespace WebVentas.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
+        
+        /// <summary>
+        /// VentaProductoGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView VentaProductoGridView;
     }
 }

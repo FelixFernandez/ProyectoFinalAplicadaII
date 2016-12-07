@@ -60,6 +60,12 @@
         <asp:button  validationgroup="ValidarEliminar" runat="server" Text="Eliminar" type="reset" class="btn btn-danger" OnClick="Eliminar_Click"></asp:button>
         <asp:button runat="server" Text="Nuevo" type="submit" class="btn btn-success" OnClick="Nuevo_Click"></asp:button>
         <asp:button validationgroup="ValidarGuardar" runat="server" Text="Guardar" type="submit" class="btn btn-primary" OnClick="Guardar_Click"></asp:button>
+          <div>
+            <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextBoxProductoID" ErrorMessage="*Ingrese un id para eliminar" ForeColor="Red" ></asp:requiredfieldvalidator>
+           </div>
+           <div>
+             <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator9" runat="server" ControlToValidate="TextBoxProductoID" ErrorMessage="*Ingrese solo numeros" ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>
+        </div>
       </div>
     </div>
         </div>
@@ -67,12 +73,7 @@
           <div class="row">
             <div class="well">
                 <div class="text-danger">
-                      <div>
-                        <asp:requiredfieldvalidator validationgroup="ValidarEliminar" ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxProductoID" ErrorMessage="*Ingrese un id para eliminar" ForeColor="Red" ></asp:requiredfieldvalidator>
-                    </div>
-                    <div>
-                        <asp:RegularExpressionValidator ValidationGroup="ValidarEliminar" ID="RegularExpressionValidator6" runat="server" ControlToValidate="TextBoxProductoID" ErrorMessage="*Ingrese solo numeros" ValidationExpression="^[0-9]*" ForeColor="Red"></asp:RegularExpressionValidator>
-                    </div>
+                     
                  </div> 
             </div>
           </div>
